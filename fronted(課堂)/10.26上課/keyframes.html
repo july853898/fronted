@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyframes</title>
+    <style>
+        #box {
+            width: 500px;
+            height: 500px;
+            border: 20px solid black;
+            position: relative;
+            margin: auto;
+            overflow: hidden;
+             
+        }
+        .size-w {
+            width: 500px;
+            height: 50px;  
+        }
+        .size-h {
+            width: 50px;
+            height: 500px;
+        }
+
+        .move1 {
+            background-color: red;
+            position: absolute;
+            animation: move-1;
+            animation-duration: 3s;
+            animation-iteration-count: infinite; 
+    
+        }
+        .move2 {
+            background-color: rgb(73, 211, 8);
+            position: absolute;
+            right: 0%;
+            animation: move-2;
+            animation-duration: 3s;
+            animation-iteration-count: infinite; 
+        }
+        .move3 {
+            background-color: rgb(31, 18, 214);
+            bottom: 0%;
+            position: absolute;
+            animation: move-3;
+            animation-duration: 3s;
+            animation-iteration-count: infinite; 
+
+        }
+        .move4 {
+            background-color: rgb(212, 235, 7);
+            bottom: 0%;
+            position: absolute;
+            animation: move-4;
+            animation-duration: 3s;
+            animation-iteration-count: infinite; 
+        }
+        
+            
+        
+        .text {
+            font-size: 40px;
+            width: 3.5em;
+            overflow: hidden;
+            white-space: nowrap;
+            /* font-size: 40px;
+            display: inline-block; */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-right: 0.05em solid;
+            transform: translate(-50%,-50%);
+            animation: text-1 3s steps(3) infinite;
+
+            
+            
+        }
+        @keyframes text-1 {
+            0%{ 
+                width: 0em;
+                border-color: black;
+            }
+            25% {
+                width: 1em;
+                border-color: transparent;
+            }
+            50% {
+                width: 2em;
+                border-color: black;
+            }
+            75% {
+                width: 3em;
+                border-color: transparent;
+            }
+            100% {
+                width: 4em;
+                border-color: black;
+            }
+
+
+        }
+
+        
+        @keyframes move-1 {
+            0%{
+                left: -100%;
+                background: linear-gradient( 90deg,
+                red 50%, blue 50% );
+            }
+            20% {
+                left: 100%;
+            }
+            60% {
+                left: 100%;
+            }
+            80% {
+                left: 100%;    
+            }
+            100% {
+                left: 100%;
+                
+            }
+        }
+        @keyframes move-2 {
+            0%{
+                top: -100%;     
+            }
+            20% {
+                top: -100%;
+            }
+            40% {
+                top: 100%;
+            }
+            60% {
+                top: 100%;
+            }
+            80% {
+                top: 100%;
+            }
+            100% {
+                top: 100%;
+            }
+        }
+        @keyframes move-3 {
+            0% {
+                right: -100%;    
+            }
+            20% {
+                right: -100%;    
+            }
+            40%{
+                right: -100%;
+            }
+            60% {
+                right: 100%;
+            }
+            80% {
+                right: 100%;
+            }
+            100% {
+                right: 100%;
+            }
+        }
+        @keyframes move-4 {
+            0% {
+                bottom: -100%;
+            }
+            20% {
+                bottom: -100%;
+            }
+            40% {
+                bottom: -100%;
+            }
+            60% {
+                bottom: -100%;
+            }
+            80%{
+                bottom: 100%;
+            }
+            100% {
+                bottom: 100%;
+            }
+        }
+       
+        @keyframes caret {
+      
+        }
+        /* @keyframes l-1 {
+            from{
+                opacity: 1;
+            }
+            to{
+                opacity: 0;
+            }
+        }
+        @keyframes o-1 {
+            from{
+                opacity: 1;
+            }
+            to{
+                opacity: 0;
+            }
+        }
+        @keyframes d-1 {
+            from{
+                opacity: 1;
+            }
+            to{
+                opacity: 0;
+            }
+        }
+        @keyframes i-1 {
+            from{
+                opacity: 1;
+            }
+            to{
+                opacity: 0;
+            }
+        }
+        @keyframes n-1 {
+            from{
+                opacity: 1;
+            }
+            to{
+                opacity: 0;
+            }
+        }
+        @keyframes g-1 {
+            from{
+                opacity: 1;
+            }
+            to{
+                opacity: 0;
+            }
+        }
+        @keyframes r-1 {
+            from{
+                opacity: 1;
+            }
+            to{
+                opacity: 0;
+            }
+        } */
+
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div class="move1 size-w"></div>
+        <div class="move2 size-h"></div>
+        <div class="move3 size-w"></div>
+        <div class="move4 size-h"></div>
+
+        <div class="text">
+            Loding!
+            <!-- <span class="l animation">L</span> 
+            <span class="o animation">o</span> 
+           <span class="d animation">d</span> 
+           <span class="i animation">i</span> 
+           <span class="n animation">n</span> 
+           <span class="g animation">g</span> 
+           <span class="r animation">!</span>  -->
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+body, ul, ol, li {
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  width: 600px;
+  height: 600px;
+  border: 1px solid black;
+}
+.box .box1 {
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+}
+.box .box1::before {
+  content: "";
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  background-color: red;
+  position: absolute;
+}
+.box .box1:focus::before {
+  border: 2px solid goldenrod;
+}
+@media (max-width: 1000px) {
+  .box {
+    background-color: brown;
+  }
+}
+.box:hover + .box2 {
+  width: 200px;
+  background-color: yellow;
+  font-size: 40px;
+}/*# sourceMappingURL=test.css.map */

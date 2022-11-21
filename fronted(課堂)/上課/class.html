@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/all.min.css">
+    <title>Document</title>
+    <style>
+        /* *字號代表全域的變數，整個html的所有變動都會吃到 */
+         *{
+            box-sizing: border-box;
+        } 
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #background {
+            width: 100%;
+            background-color: #242526;
+            position: relative;
+        }
+
+        #nav {
+            width: 100%;
+            height: 56px;
+            background-color: #242526d5;
+            color: rgb(190, 88, 88);
+        }
+
+        #logo-search {
+            width: 350px;
+            height: 100%;
+            padding-top: 10px;
+
+            /* 標記線用來先看logo-search有多大 */
+            /* border: 1px solid red; */
+
+            float: left;
+        }
+
+        #logo {
+            font-size: 35px;
+            color: #16a4fb;
+            margin-left: 7px;
+            float: left;
+            margin-right: 10px;
+        }
+
+        #search {
+            width: 222px;
+            line-height: 37px;
+            color: #b0b3b8;
+            background-color: rgba(128, 128, 128, 0.781);
+            border-radius: 50px;
+            font-size: 18px;
+            float: left
+        }
+
+        input {
+            border: 0;
+            outline: none;
+            background-color: rgba(0, 0, 0, 0);
+        }
+
+        ::placeholder {
+            color: #242526;
+        }
+
+        #menu {
+            width: 600px;
+            height: 100%;
+            /* calc函數用作計算 */
+            margin-left: calc(50% - 650px);
+            float: left;
+        }
+
+        #home {
+            font-size: 28px;
+            color: white;
+            float: left;
+            margin-left: 70px;
+            /* line-height : 行高 */
+            /* 以nav的height為主，因為height是56，所以56是置中，比56小是往上，比56大是往下 */
+            line-height: 56px;
+        }
+
+        #friend {
+            font-size: 28px;
+            color: white;
+            float: left;
+            margin-left: 70px;
+            line-height: 56px;
+        }
+
+        #video {
+            font-size: 28px;
+            color: white;
+            float: left;
+            margin-left: 70px;
+            line-height: 56px;
+        }
+
+        #shop {
+            font-size: 28px;
+            color: white;
+            float: left;
+            margin-left: 70px;
+            line-height: 56px;
+        }
+
+        #game {
+            font-size: 28px;
+            color: white;
+            float: left;
+            margin-left: 70px;
+            line-height: 56px;
+        }
+
+        #member {
+            width: 280px;
+            height: 100%;
+            float: right;
+        }
+
+        #function {
+            font-size: 28px;
+            color: white;
+            float: left;
+            margin-left: 30px;
+            line-height: 56px;
+        }
+
+        #messenger {
+            font-size: 28px;
+            color: white;
+            float: left;
+            margin-left: 30px;
+            line-height: 56px;
+        }
+
+        #notice {
+            font-size: 28px;
+            color: white;
+            float: left;
+            margin-left: 30px;
+            line-height: 56px;
+        }
+
+        #personal {
+            font-size: 28px;
+            color: white;
+            float: left;
+            margin-left: 30px;
+            line-height: 56px;
+        }
+        .fa-solid{
+            margin-left: 10px;
+        }
+        #bottom-background{
+            width: 100%;
+            height: calc(100vh - 56px);
+            background-color: #242526;
+        }
+        #info{
+            width: 1250px;
+            height: 518px;
+            margin: auto;
+        }
+        #banner{
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        img{
+            width: 100%;
+        }
+        #text-info{
+            width: 100%;
+            color: white;
+            background-color: #242526;
+            
+        }
+        #send-messenger{
+            width: 350px;
+            height: 50px;
+            background-color: #16a4fb;
+            border-radius: 15px;
+            margin: 100px 50px 20px 50px;
+            border: 1px solid rgb(201, 148, 49);
+            float: right;
+        }
+
+        #message{
+            font-size: 30px;
+            float: left;
+            line-height: 0px;
+        }
+        #info-button{
+            width: 100%;
+            padding: 5px;
+            background-color: #242526;
+        }
+        #send-messenger-bu{
+            width: 27%;
+            height: 41px;
+            line-height: 41px;
+            margin: -81px 24px 0px 0px;
+            border-radius: 12px;
+            background-color: #16a4fb;
+            text-align: center;
+            float: right;
+        }
+        #send-messenger-bu i{
+            margin-right: 10px;
+        }
+        #locial-photo{
+            height: 132px;
+            width: 132px;
+            top: 98%;
+            left: 3%;
+            position: absolute;
+            float: left;
+        }
+        #locial{
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+        #fans-name{
+            padding-top: 4px;
+            padding-left: 199px;
+        }
+        #name{
+            font-size: 28px;
+            font-weight: bolder;
+        }
+        #p-message{
+            margin: 14px 10px 10px 120px;
+            line-height: 0px;
+        }
+        #home-button{
+            float: left;
+            margin-left: 40px;
+        }
+        #about-button{
+            float: left;
+            margin-left: 40px;
+        }
+        #photo-button{
+            float: left;
+            margin-left: 40px;
+        }
+        #comment-button{
+            float: left;
+            margin-left: 40px;
+        }
+        #more-button{
+            float: left;
+            margin-left: 40px;
+        }
+        #detail{
+            width: 300px;
+            height: 100px;
+            margin: 5px -31px 10px 10px;
+            float: right;
+
+        }
+        #gooded{
+            width: 131px;
+            height: 35px;
+            background-color: #263951;
+            margin: 10px 5px 10px 10px;
+            line-height: 35px;
+            border-radius: 10px;
+            color: #2d88ff;
+            float: left;
+        }
+        #good-word{
+            margin: 0px 10px 0px 0px;
+            padding-left: 27px;
+        }
+        #good-word i{
+            margin-right: 5px;
+        }
+        #search-button{
+            width: 40px;
+            height: 35px;
+            border-radius: 10px;
+            background-color: rgba(102, 101, 101, 0.801);
+            margin: 10px 5px 10px 1px;
+            line-height: 35px;
+            padding-right: 10px;
+            float: left;
+            text-align: center;
+        }
+        #other{
+            width: 40px;
+            height: 35px;
+            border-radius: 10px;
+            background-color: rgba(102, 101, 101, 0.801);
+            margin: 10px 10px 10px 1px;
+            line-height: 35px;
+            padding-right: 10px;
+            text-align: center;
+            float: left;
+        }
+        #star{
+            color: #f7b928;
+        }
+        #switch{
+            margin: -15px 0px 0px -24px;
+        }
+
+        /* #bb{
+            color: yellow;
+        } */
+        
+        /* #detail #search-button i{
+            color: #f7b928;
+        } */
+    </style>
+</head>
+
+<body>
+    <div id="background">
+        <!-- 頂部 -->
+        <div id="nav">
+            <div id="logo-search">
+                <!--FB圖示、搜尋 -->
+                <div id="logo"><i class="fa-brands fa-facebook"></i></div>
+                <div id="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="搜尋 Facebook">
+                </div>
+            </div>
+            <div id="menu">
+                <!-- 中間五個圖示 -->
+                <div id="home"><i class="fa-solid fa-house"></i></div>
+                <div id="friend"><i class="fa-solid fa-user-group"></i></div>
+                <div id="video"><i class="fa-solid fa-video"></i></div>
+                <div id="shop"><i class="fa-solid fa-store"></i></div>
+                <div id="game"><i class="fa-solid fa-gamepad"></i></div>
+            </div>
+            <div id="member">
+                <!-- 右邊四個圖示 -->
+                <div id="function"><i class="fa-solid fa-table-cells"></i></div>
+                <div id="messenger"><i class="fa-brands fa-facebook-messenger"></i></div>
+                <div id="notice"><i class="fa-solid fa-bell"></i></div>
+                <div id="personal"><i class="fa-solid fa-user"></i></div>
+            </div>
+        </div>
+        <!-- 下部分 -->
+        <div id="bottom-background">
+            <div id="info">
+                <!-- 月亮圖片 -->
+                <div id="banner">
+                    <img src="../img/moon.jpg" alt="月亮圖片">
+                    <div id="locial-photo">
+                        <img id="locial" src="../img/locial.jpg" alt="商標圖片">
+                    </div>
+                    
+                </div>
+                <!-- 下面圖示區、文字訊息 -->
+                <div id="text-info">
+                <!-- 圖片、橡果藝術、傳送訊息 -->
+                    <div id="fans">
+                        <div id="fans-name">
+                            <div id="name">
+                                <p>Acorn Studio 橡果藝術</p>
+                            </div> 
+                            <div id="title">
+                                <p>@acornstudiotw・<span id="star"><i class="fa-solid fa-star"></i></span> 5 143則評論 ⓘ・居家服飾</p>
+                            </div>
+                        </div>
+                    <div id="send-messenger-bu">
+                            <i class="fa-brands fa-facebook-messenger"></i>傳送訊息
+                    </div>
+                    <hr>
+                    <div id="info-button">
+                        <div id="switch">
+                            <div id="home-button">
+                                <p>主頁</p>
+                            </div>
+                            <div id="about-button">
+                                <p>關於</p>
+                            </div>
+                            <div id="photo-button">
+                                <p>相片</p>
+                            </div>
+                            <div id="comment-button">
+                                <p>評論</p>
+                            </div>
+                            <div id="more-button">
+                                <p>更多<i class="fa-solid fa-caret-down"></i></p>
+                            </div>
+                        </div>
+                        <div id="detail">
+                            <div id="gooded">
+                                <p id="good-word"><i class="fa-solid fa-thumbs-up"></i> 讚好</p>
+                            </div>
+                            <!-- <span>可以用來做特定修改</span> -->
+                            <!-- 舉例<span id="bb"><i class="fa-solid fa-magnifying-glass"></i></i></span> 
+                                 此時整個i class就被包住可以用來做修改，在style加#bb{}就可以修改裡面元素-->
+                            <div id="search-button"><i class="fa-solid fa-magnifying-glass"></i></i></div>
+                            <div id="other"><i class="fa-solid fa-ellipsis"></i></div>
+                        </div>
+                    </div>    
+                </div>
+        
+        </div>
+
+    </div>
+</body>
+
+</html>

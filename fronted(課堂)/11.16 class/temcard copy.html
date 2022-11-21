@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .area-board {
+            width: 100%;
+            height: 300px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+            gap: 30px;
+            background-color: azure;
+        }
+        .area-board .area {
+            font-size: 20px;
+            width: 100px;
+            height: 50px;
+            cursor: pointer;
+
+        }
+
+        .weather-sectoin {
+            width: 100%;
+            height: calc(100vh - 150px);
+            background-color: aqua;
+            gap: 10px;
+            padding-top: 30px;
+        }
+        .card-box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid beige;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+        .weather-sectoin img {
+            width: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 地區頁籤 -->
+    <div class="area-board">
+        <button class="area" >北部</button>
+        <button class="area">中部</button>
+        <button class="area">南部</button>
+        <button class="area">東部</button>
+        <button class="area">離島</button>
+        <button class="area">全部</button>
+
+    </div>
+    <!-- 天氣概述  -->
+    
+        <div class="weather-sectoin">
+            <div class="card-box">
+                <img src="./img/01.svg" alt="">
+                <div class="area-name">444</div>
+                <div class="temperature">444</div>
+                <div class="weather-section">44444</div>
+                <div class="overview">444</div>
+            </div>
+        </div>
+ 
+   
+
+    <script>
+        
+        
+        fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-008C724E-81CD-4F5E-BD82-A1704139AF13').then(function(response){
+            console.log(response);
+            return response.json()
+        }).then(function(data){
+
+            // 地區名稱
+            console.log(data.records.location);
+            // 最大溫度
+            console.log(data.records.location[0].weatherElement[4].time[0].parameter.parameterName);
+            // 舒適度
+            console.log(data.records.location[0].weatherElement[3].time[0].parameter.parameterName);
+            // 天氣表現
+            console.log(data.records.location[0].weatherElement[0].time[0].parameter.parameterName);
+            // 天氣表現 情況
+            console.log(data.records.location[0].weatherElement[0].time[0].parameter.parameterValue[0]);
+
+            
+
+            // 宣告
+            const cardBox = document.querySelector('.card-box')
+            const areaBtn = document.querySelectorAll('.area')
+            const weatherImg = document.querySelector('.image')
+            
+            areaBtn.forEach(function(area,tabindex){
+                
+            
+            // 每一個area都做一次點擊事件
+            area.addEventListener('click',function(){
+                cardBox.innerHTML = '';
+                
+                          
+                // 針對api裡面的陣列做forEach
+
+                data.records.location.forEach(function(datas,index){
+                    
+
+                    // 天氣判斷
+                    
+                    let weaTher = data.records.location[index].weatherElement[0].time[0].parameter.parameterValue;
+                    
+                    // 天氣指數
+                    
+                         
+                    // console.log(weatherImg);
+                    // if(weaTher>0 && weaTher<=3){
+                    //     weatherImg = './img/01.svg';    
+                    // }
+                    // else if(weaTher>3 && weaTher<=7){
+                    //     weatherImg = './img/01.svg';
+                    // }else if(weaTher>8 && weaTher<=42){
+                    //     weatherImg = './img/01.svg';
+                    // }
+                    
+
+
+
+
+                    // 北部
+                    if(tabindex == 0){
+                        if(index == 1 || index == 3||index == 4||index == 5 || index == 7 || index == 13 ||
+                        index == 18){
+                            cardOut()
+                        }
+                    // 中部
+                    }else if (tabindex == 1){
+                        if(index == 8 || index == 9 || index == 11 || index == 14 ||index == 20){
+                            cardOut()
+                        }
+                    }
+                    // 南部
+                    else if (tabindex == 2){
+                        if(index == 0 || index == 2 || index == 6 || index == 15|| index == 17){
+                            cardOut()
+                        }
+                    }
+                    // 東部
+                    else if (tabindex == 3){
+                        if(index == 10 || index == 12 ){
+                            cardOut()
+                        }
+                    }
+                    // 離島
+                    else if (tabindex == 4){
+                        if(index == 16 || index == 19 || index == 21){
+                            cardOut()
+                        }
+                    }
+
+                    else if(tabindex == 5){
+                        cardOut()
+                    }
+
+                    function cardOut(){
+                            cardBox.innerHTML += 
+                            `<div class="area-name">${data.records.location[index].locationName}</div>
+                            <img src="./img/01.svg" alt="">
+                            <div class="temperature">${data.records.location[index].weatherElement[4].time[0].parameter.parameterName}</div>
+                            <div class="weather-section">${data.records.location[index].weatherElement[0].time[0].parameter.parameterName}</div>
+                            <div class="overview">${data.records.location[index].weatherElement[3].time[0].parameter.parameterName}</   div>
+                            `;
+
+                    }
+
+                })
+                
+
+                // for (let i = 0; i < 22; i++){
+
+                //     // 點擊該出現的位置
+                //     // console.log(e.target.textContent);
+
+                //     weatherSectoin.innerHTML += `
+                     
+                //      <div class="area-name">${data.records.location[i].locationName}</div>
+                //      <div class="temperature">${data.records.location[i].weatherElement[4].time[0].parameter.parameterName}</div>
+                //      <div class="overview">${data.records.location[i].weatherElement[3].time[0].parameter.parameterName}</div>    
+                //      `
+                    
+                // }
+            })
+        })    
+        
+                           
+    });
+
+        
+
+        
+        
+    
+    // console.log(datas[0].img)
+
+        
+            
+
+
+
+       
+
+
+
+
+    </script>
+
+</body>
+</html>

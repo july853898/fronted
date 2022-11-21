@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+    .btns {
+        width: 200px;
+        font-size: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    </style>
+</head>
+<body>
+    <label for="ainput">a:</label>
+    <input type="text"  id="ainput">
+    <label for="binput">b:</label>
+    <input type="text"  id="binput">
+    <div class="btns">
+        <div class="add">+</div>
+        <div class="min">-</div>
+        <div class="multi">*</div>
+        <div class="division">/</div>
+    </div>
+    <br>
+    <div>ans: <span class="ans"></span></div>
+
+    <script>
+        const aInput = document.querySelector('#ainput')
+        const bInput = document.querySelector('#binput')
+
+
+        const addBtn = document.querySelector('.add')
+        const minBtn = document.querySelector('.min')
+        const mulitBtn = document.querySelector('.multi')
+        const divisionBtn = document.querySelector('.division')
+
+        const ans = document.querySelector('.ans')
+
+        addBtn.addEventListener('click',function(){
+            ans.textContent = calc('+');
+        })
+        minBtn.addEventListener('click',function(){
+            ans.textContent = calc('-');
+        })
+        mulitBtn.addEventListener('click',function(){
+            ans.textContent = calc('*');
+        })
+        divisionBtn.addEventListener('click',function(){
+            ans.textContent = calc('/');
+        })
+        function calc(opeator){
+
+            
+            // if(opeator == '+'){
+            //     return Number(aInput.value) + Number(bInput.value);
+                
+            // }
+            // if(opeator == '-'){
+            //     return Number(aInput.value) - Number(bInput.value);
+            // }
+            // if(opeator == '*'){
+            //     return Number(aInput.value) * Number(bInput.value);
+            // }
+            // if(opeator == '/'){
+            //     return Number(aInput.value) / Number(bInput.value);
+            // }
+
+            // switch 判斷
+
+            switch (opeator) {
+                case '+':
+                    return Number(aInput.value) + Number(bInput.value);
+                    break;
+                case '-':
+                    return Number(aInput.value) - Number(bInput.value);
+                    break;
+                    
+                
+                case '*':
+                    return Number(aInput.value) * Number(bInput.value);
+                    break;
+                    
+                
+                case '/':
+                    return Number(aInput.value) / Number(bInput.value);
+                    break;
+                default:
+                    return ans.textContent = '出錯啦';
+                    console.log(calc);
+                
+            }
+        }
+        
+    </script>
+</body>
+</html>

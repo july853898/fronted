@@ -1,0 +1,46 @@
+@import '_text.scss';
+* {
+    box-sizing: border-box;
+}
+body,ul,ol,li {
+    margin: 0;
+    padding: 0;
+}
+
+
+.box {
+    width: 600px;
+    height: 600px;
+    border: 1px solid black;
+    
+
+
+    .box1 {
+        width: 200px;
+        height: 200px;
+        background-color: blue; 
+        &::before {
+            content: '';
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+            background-color: red;
+            position: absolute;
+
+        }
+        &:focus::before {
+            border: 2px solid goldenrod;
+        }
+    
+         
+        
+    }
+    @media (max-width:1000px) {
+        background-color: brown;
+    }
+    &:hover + .box2{
+        width: 200px;
+        background-color: yellow;
+        font-size: $bbb;
+    }
+}

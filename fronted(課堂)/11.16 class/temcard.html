@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .area-board {
+            width: 100%;
+            height: 150px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+            gap: 30px;
+            background-color: azure;
+        }
+        .area-board .area {
+            font-size: 30px;
+            width: 200px;
+            height: 50px;
+            cursor: pointer;
+
+        }
+        .weather-sectoin {
+            width: 100%;
+            height: calc(100vh - 150px);
+            background-color: aqua;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding-top: 30px;
+        }
+        .weather-sectoin img {
+            width: 300px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 地區頁籤 -->
+    <div class="area-board">
+        <button class="area">北部</button>
+        <button class="area">中部</button>
+        <button class="area">南部</button>
+        <button class="area">東部</button>
+        <button class="area">離島</button>
+        <button class="area">全部</button>
+    </div>
+    <!-- 天氣概述  -->
+    <div class="weather-sectoin">
+        <img src="" alt="">
+        <div class="area-name"></div>
+        <div class="temperature"></div>
+        <div class="overview"></div>
+    </div>
+
+    <script>
+        const weatherSectoin = document.querySelector('.weather-sectoin')
+        const areaBtn = document.querySelectorAll('.area')
+
+        const datas = [
+
+        {  
+            'location': '北部',
+            'img' : './img/sun.jfif',
+            'area-name' : '台北地區',
+            'temperature' : '30°C',
+            'overview' : '天氣很熱要多喝水'
+        },
+
+        {
+            'location': '中部',
+            'img' : './img/clodyday.png',
+            'area-name' : '中部地區',
+            'temperature' : '20°C',
+            'overview' : '溫度濕冷請多注意保暖'
+
+        },
+
+        {
+            'location': '南部',
+            'img' : './img/sun.jfif',
+            'area-name' : '南部地區',
+            'temperature' : '33°C',
+            'overview' : '非常熱多注意'
+
+        },
+
+        {
+            'location': '東部',
+            'img' : './img/sun.jfif',
+            'area-name' : '東部地區',
+            'temperature' : '28°C',
+            'overview' : '溫度適宜，適合全家出遊'
+
+        },
+        {
+            'location': '離島',
+            'img' : './img/rain.jfif',
+            'area-name' : '離島地區',
+            'temperature' : '25°C',
+            'overview' : '溫度適宜，適合全家出遊'
+
+        },
+        
+ 
+    ]
+    
+    
+    // console.log(datas[0].img)
+
+        areaBtn.forEach(function(area){
+
+            // 每一個area都做一次點擊事件
+            area.addEventListener('click',function(e){
+                // console.log(e.target.textContent);
+                weatherSectoin.innerHTML = '';
+                for (let i = 0; i < datas.length; i++){
+                    // 該筆資料的地區
+                    console.log(datas[i].location);
+                    // 點擊該出現的位置
+                    console.log(e.target.textContent);
+
+
+                    if(datas[i].location == e.target.textContent || e.target.textContent == '全部'){
+                        weatherSectoin.innerHTML += `
+                        <img src="${datas[i].img}" alt="">
+                        <div class="area-name">${datas[i]['area-name']}</div>
+                        <div class="temperature">${datas[i].temperature}</div>
+                        <div class="overview">${datas[i].overview}</div>    
+                        `
+                    }
+                }
+               
+
+            })
+
+
+
+        })
+            
+
+
+
+       
+
+
+
+
+    </script>
+
+</body>
+</html>

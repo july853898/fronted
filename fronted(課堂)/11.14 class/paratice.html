@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            height: 100vh;
+            background-color: #F06060;
+        }
+        .box{
+            width: 500px;
+            height: 500px;
+            padding: 10px;
+            background-color: #ddd;
+            border-radius: 10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .cube {
+            width: 240px;
+            height: 240px;
+            background-color: blue;
+            border: 5px solid #ddd;
+            border-radius: 10px;
+        }
+        .ans {
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="cube"></div>
+            <div class="cube ans"></div>
+            <div class="cube"></div>
+            <div class="cube"></div>
+        </div>
+    </div>
+    
+    <script>
+        const boxs = document.querySelector('.box')
+
+        function setBoard(){
+            // 每一次進入function 就先宣告找出所有box
+            let cubes = document.querySelectorAll('.cube')
+        
+            cubes.forEach(function(box){
+            // 每個box2都綁上事件
+                box.addEventListener('click',function(){
+                // 如果點到正解
+                // 0 ~ 3
+                    if(box.classList.container('ans')){
+
+                        let random = Math.floor(Math.random*4);
+                        boxs.innerHTML = '';
+                        for(let i = 0; i < 4; i++){
+                            if(i == random){
+                                boxs.innerHTML += '<div class="cube ans" style="background-color: rgba(150,150,150,0.5);"></div>'
+                            }else {
+                                boxs.innerHTML +=  '<div class="cube" style="background-color: rgba(150,150,150,1);"></div>'
+                        // 遞迴函數 重新宣告所有box 重新綁事件
+                        
+                            }
+                        
+                        }  
+                        setBoard();  
+
+
+                    }
+                      
+                    
+            })
+
+        })
+        }
+        setBoard();
+        
+        
+    </script>
+</body>
+</html>

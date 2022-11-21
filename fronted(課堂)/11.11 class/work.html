@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 情境提示 今天是1111 雋亞開心的要買 switch 
+        // 他在網路上找到10個賣家 分別給出了10個不同售價
+        // 請你幫雋亞用 console.log(); 找出這十筆價格的平均值 
+        // 以及做排序方便他一眼看出最大值
+
+        let array = [1510,31,42,44,125,64,84,150,29,50]
+        let sum = 0;
+        array.sort((x,y) => y - x);
+        for(let i = 0; i < array.length; i++){
+            sum +=array[i];
+
+            
+        }
+        console.log(sum / array.length);
+
+        console.log(array);
+    </script>
+</body>
+</html>

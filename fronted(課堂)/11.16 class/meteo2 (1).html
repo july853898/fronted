@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>METEO</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: wheat;
+        }
+        .container{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+        }
+        .board{
+            width: 100%;
+            height: 100%;
+            background-color: wheat;
+            display: flex;
+        }
+        .main{
+            padding: 10px;
+
+        }
+        .tabs{
+            display: flex;
+        }
+        .tab{
+            margin: 5px;
+            background-color: rgb(236, 94, 38);
+            border-radius: 5px;
+            font-size: 20px;
+            font-weight: 900;
+            /* border: 1px solid #000; */
+            padding: 3px 4px;   
+
+        }
+        .active{
+            background-color: aquamarine;
+        }
+        .none{
+            display: none;
+        }
+        .content{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .card{
+            height: 300px;
+            background-color: rgb(201, 93, 147);
+            font-weight: 900;
+            color: aliceblue;
+            border-radius: 10px;
+            margin: 5px 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .card img{
+            width: 200px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="board">
+            <div class="main">
+                <div class="tabs">
+                    <div class="tab active">北部</div>
+                    <div class="tab">中部</div>
+                    <div class="tab">南部</div>
+                    <div class="tab">東部</div>
+                    <div class="tab">離島</div>
+                    <div class="tab">全部</div>
+                </div>
+                <div class="contents">
+                    <div class="content">
+                        </div>
+                    
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        const tabs = document.querySelectorAll('.tab');
+        const content = document.querySelector('.content');
+
+        let weather = 0;
+        let weatherImg = '';
+
+        fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=rdec-key-123-45678-011121314').then(function(response){
+            return response.json();
+        }).then(function(dataW){
+
+            console.log(dataW.records.location);
+            // console.log(dataW.records.location[0]);
+            // console.log(dataW.records.location[0]);
+
+            // console.log(dataW.records.location);
+            //舉例嘉義縣
+            //地區
+            // console.log(dataW.records.location[0].locationName);
+
+            //天氣現象
+            // console.log(dataW.records.location[0].weatherElement[0].time[0].parameter.parameterName);
+            //天氣現象代碼
+            // console.log(dataW.records.location[0].weatherElement[0].time[0].parameter.parameterValue);
+            //最小溫度
+            // console.log(dataW.records.location[0].weatherElement[2].time[0].parameter.parameterName);
+            //最大溫度
+            // console.log(dataW.records.location[0].weatherElement[4].time[0].parameter.parameterName);
+
+            // document.querySelector('.container').innerHTML = data1.address.city;
+
+            tabs.forEach(function(tab,tabindex){
+
+                tab.addEventListener('click',function(){
+                tabs.forEach(function(tab,tabindex){
+                    tab.classList.remove('active');
+                });
+
+                tab.classList.add('active');
+                // content.textContent = contentArray[index];                
+
+                content.innerHTML ='';
+                dataW.records.location.forEach(function(data,index){
+
+                    weather = dataW.records.location[index].weatherElement[0].time[0].parameter.parameterValue;
+                    if(weather>0 && weather<=3){
+                        weatherImg = './img/sun.jpg';
+                    }else if(weather>3 && weather<=7){
+                        weatherImg = './img/wend.jpg';
+                    }else if(weather>8 && weather<=42){
+                        weatherImg = './img/rain.jpg';
+                    }
+                    console.log(weatherImg);
+                    //北
+                    if(tabindex == 0 ){
+                        if(index == 1||index == 3 ||index == 4 ||index == 5 ||index == 13 ||index == 18){
+                            content.innerHTML += `<div class="card">地區: ${dataW.records.location[index].locationName}<img src="${weatherImg}" alt=""><span>氣溫:${dataW.records.location[index].weatherElement[2].time[0].parameter.parameterName}度C~${dataW.records.location[index].weatherElement[4].time[0].parameter.parameterName}度C</span><span></span>描述:${dataW.records.location[index].weatherElement[0].time[0].parameter.parameterName}</div>`;
+                        }
+                    //中
+                    }else if(tabindex == 1){
+                        if(index == 8||index == 11 ||index == 14 ||index == 20){
+                            content.innerHTML += `<div class="card">地區: ${dataW.records.location[index].locationName}
+                                <img src="${weatherImg}" alt=""><span>氣溫:${dataW.records.location[index].weatherElement[2].time[0].parameter.parameterName}度C~${dataW.records.location[index].weatherElement[4].time[0].parameter.parameterName}度C</span><span></span>描述:${dataW.records.location[index].weatherElement[0].time[0].parameter.parameterName}</div>`;
+                        }
+                    //南
+                    }else if(tabindex == 2){
+                        if(index == 0||index == 2||index == 6||index == 9||index == 15||index == 17){
+                            content.innerHTML += `<div class="card">地區: ${dataW.records.location[index].locationName}<img src="${weatherImg}" alt=""><span>氣溫:${dataW.records.location[index].weatherElement[2].time[0].parameter.parameterName}度C~${dataW.records.location[index].weatherElement[4].time[0].parameter.parameterName}度C</span><span></span>描述:${dataW.records.location[index].weatherElement[0].time[0].parameter.parameterName}</div>`;
+                        }
+                    //東
+                    }else if(tabindex == 3){
+                        if(index == 7||index == 10 ||index == 12){
+                            content.innerHTML += `<div class="card">地區: ${dataW.records.location[index].locationName}<img src="${weatherImg}" alt=""><span>氣溫:${dataW.records.location[index].weatherElement[2].time[0].parameter.parameterName}度C~${dataW.records.location[index].weatherElement[4].time[0].parameter.parameterName}度C</span><span></span>描述:${dataW.records.location[index].weatherElement[0].time[0].parameter.parameterName}</div>`;
+                        }
+                    //島
+                    }else if(tabindex == 4){
+                        if(index == 16||index == 19 ||index == 21){
+                            content.innerHTML += `<div class="card">地區: ${dataW.records.location[index].locationName}<img src="${weatherImg}" alt=""><span>氣溫:${dataW.records.location[index].weatherElement[2].time[0].parameter.parameterName}度C~${dataW.records.location[index].weatherElement[4].time[0].parameter.parameterName}度C</span><span></span>描述:${dataW.records.location[index].weatherElement[0].time[0].parameter.parameterName}</div>`;
+                        }
+                    //全部
+                    }else if(tabindex == 5){
+                        content.innerHTML += `<div class="card">地區: ${dataW.records.location[index].locationName}<img src="${weatherImg}" alt=""><span>氣溫:${dataW.records.location[index].weatherElement[2].time[0].parameter.parameterName}度C~${dataW.records.location[index].weatherElement[4].time[0].parameter.parameterName}度C</span><span></span>描述:${dataW.records.location[index].weatherElement[0].time[0].parameter.parameterName}</div>`;
+                    }
+                    
+
+                    // console.log(dataW);
+
+                    //地區雨天氣代碼
+                    // console.log(dataW.records.location[index].locationName);
+                    // console.log(weather);
+
+                    // content.innerHTML += `<div class="card">地區: ${dataW.records.location[index].locationName}<img src="${weatherImg}" alt=""><span>氣溫:${dataW.records.location[index].weatherElement[2].time[0].parameter.parameterName}度C~${dataW.records.location[index].weatherElement[4].time[0].parameter.parameterName}度C</span><span></span>描述:${dataW.records.location[index].weatherElement[0].time[0].parameter.parameterName}</div>`;
+
+                
+
+                    });
+                });
+                });
+
+        
+            
+        });
+
+        
+            
+
+        
+
+        // console.log(index);
+                // console.log(datas[index].area);
+                // console.log(contentArray[tabindex]);
+                // console.log(datas[index].area);
+                // console.log(datas[index].weather);
+
+                // if(datas[index].weather == '晴'){
+                //     weatherImg = './img/sun.jpg';
+                // }else if(datas[index].weather == '陰'){
+                //     weatherImg = './img/wend.jpg';
+                // }else if(datas[index].weather == '雨'){
+                //     weatherImg = './img/rain.jpg';
+                // }
+                // console.log(weatherImg);
+
+                // if(datas[index].area ==contentArray[tabindex]){
+                //     content.innerHTML += `<div class="card">地區: ${datas[index].title}<img src="${weatherImg}" alt=""><span>氣溫:${datas[index].templow}度C~${datas[index].tempup}度C</span><span></span>描述:${datas[index].detail}</div>`;
+                // }else if(contentArray[tabindex]=='全部'){
+                //     content.innerHTML += `<div class="card">地區: ${datas[index].title}<img src="${weatherImg}" alt="">                <span>氣溫:${datas[index].templow}度C~${datas[index].tempup}度C</span><span></span>描述:${datas[index].detail}</div>`;
+                // }
+        
+
+        
+
+    </script>
+    
+</body>
+</html>
+
+
+                
+
+

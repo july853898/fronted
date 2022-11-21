@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        #container {
+            width: 500px;
+            height: 300px;
+            border: 1px solid palevioletred;
+            background-color: aquamarine;
+            opacity: 0.8;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border-radius: 10px;        
+        }
+
+        #container .score-board {
+            width: 350px;
+            display: inline-block;
+            margin: 40px 0px 40px 70px;
+        }
+        #container .score-board .score-input {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        #container .score-board .score-input .btn {
+            cursor: pointer;
+            border: 1px solid black;
+            border-radius: 5px;
+            box-shadow: 0px 0px 1px black;
+        }
+        
+        #container .score-board .score-input .btn:hover {
+            background-color: yellow;
+        }
+        #container .text {
+            margin-left: 82px;
+        }
+        #container .score-level {
+            font-size: 50px;
+            margin-left: 40%;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="score-board">
+            <div class="score-input">
+                <label for="score">請輸入成績 :</label>
+                <input id="score" type="number">
+                <div class="btn">輸入</div>
+            </div>
+        </div>
+        <div class="text">評等為:</div>
+        <div class="score-level"></div>
+    </div>
+    <script>
+        // 誰 (input裡面的值,輸入按鈕,輸出評等的元素)
+        // 什麼時候 (當按下輸入的按鈕)
+        // 做什麼 (判斷input裡面的值 做出評等 並且輸出在畫面上)
+        const input = document.querySelector('#score');
+        const btn = document.querySelector('.btn');
+        const scoreLevel = document.querySelector('.score-level');
+
+        btn.onclick = function () {
+            if(input.value > 100){
+                scoreLevel.innerHTML = '你作弊';
+                scoreLevel.style.color = 'red';
+            }else if(input.value > 80){
+                scoreLevel.innerHTML = 'A+';
+            }
+            else if(input.value > 70){
+                scoreLevel.innerHTML = 'A';
+            }
+            else if(input.value >= 60){
+                scoreLevel.innerHTML = 'B+';
+            }
+            else if(input.value > 50){
+                scoreLevel.innerHTML = 'B';
+            }
+            else if(input.value > 40){
+                scoreLevel.innerHTML = 'C+';
+            }
+            else if(input.value >= 30){
+                scoreLevel.innerHTML = 'C';
+            }
+            else{
+                scoreLevel.innerHTML = '你真爛';
+            }
+        };
+    </script>
+</body>
+</html>

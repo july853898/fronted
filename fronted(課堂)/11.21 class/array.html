@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        // 複製陣列，而不會汙染到
+
+        // 方法 一
+        let ojb1 = [0,1,2,3,4,5];
+        let ojb2 = [...ojb1] //[0,1,2,3,4,5]
+
+        ojb2[0] = 1;
+        console.log(ojb1, '222');
+        console.log(ojb2, '333');
+
+        // 方法 二
+        let ojb3 = [0,1,2,3,4,5];
+        let ojb4 = ojb3.slice() //[0,1,2,3,4,5]
+        
+        ojb4[0] = 1;
+        console.log(ojb3);
+        console.log(ojb4);
+
+
+    </script>
+</body>
+</html>

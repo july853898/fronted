@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 陣列
+        const array = ['mike','男',45]
+
+        // 物件
+        const object = {
+            'name' : 'mike',
+            'gender' : '男',
+            'age' : 45,
+        }
+        console.log(array);
+        // 陣列裡，顯示mike
+        console.log(array[0]);
+        // 顯示mike 方法一
+        console.log(object['name']);
+        // 顯示mike 方法二
+        console.log(object.name);
+
+
+        // 例子
+        const customer =  {
+            'carPlate' : ['AEX-8451','VFG-1547','TGF-4751'],
+        }
+
+        const person = {
+            'firstName' : 'John',
+            'lastName' : 'Smith',
+            'sex' : 'male',
+            'age' : 25,
+            'address' : {
+                'streetAddress': '21 2nd Street',
+                'city': 'New York',
+                'state': 'NY',
+                'postalCode': '10021', 
+
+            },
+            'phoneNumber' :
+            [
+                {
+                    'type': 'home',
+                    'number': '212 555-1234',
+                },
+                {
+                    'type': 'fax',
+                    'number': '646 555-4567'
+                }
+            ]
+        };
+
+        console.log(customer.carPlate[1]);
+        console.log(person.phoneNumber[1].number);
+
+    </script>
+</body>
+</html>

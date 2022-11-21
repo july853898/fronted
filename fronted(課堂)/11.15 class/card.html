@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .card {
+            width: 300px;
+            height: 300px;
+            background-color: azure;
+        }
+        img {
+
+            width: 300px;
+            height: 280px;
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <div class="container">
+        <div class="card">
+            <div class="title">文字</div>
+            <img src="./img/image1.jpg" alt="">
+        </div>
+    </div>
+
+
+    <script>
+
+        const conTainer = document.querySelector('.container')
+    
+        // 宣告 datas 陣列
+        const datas = [
+        {    
+            'title':'牛排',
+            'img' :  './img/image1.jpg'
+        },
+        {    
+            'title':'蔬菜',
+            'img' :  './img/image2.jfif'
+        },
+        {    
+            'title':'水果',
+            'img' :  './img/image3.jfif'
+        }
+        ]
+        conTainer.innerHTML = '';
+
+        datas.forEach(function(data,index){
+            
+        
+        console.log(datas);
+        conTainer.innerHTML += 
+        `
+        <div class="card">
+            <div class="title">${datas[index].title}</div>
+            <img src="${datas[index].img}" alt="">
+        </div>
+        `
+        })
+
+
+
+
+        
+
+    </script>
+</body>
+</html>

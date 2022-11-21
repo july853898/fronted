@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&family=Pacifico&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            /* scroll-behavior: smooth;
+            只能用在全域變數上，或者是html裡，不能使用在body裡面 */
+            scroll-behavior: smooth;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: rgba(143, 210, 212, 0.205);
+            /* position: relative; */
+            
+        }
+        #topimg{
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            /* 透明度 opactiy 最大1，最小0 */
+            opacity: 0.8;
+            /* background-image: url('XX')可以引入圖片，但是會填滿畫面，重複貼(如果圖片大小不足畫面的話) */
+            background-image: url('../img/G20.jpg');
+            /* 調整圖片大小使用 background-size */
+            background-size: cover;
+            /* 調整是否要重複印製圖片填滿 */
+            background-repeat: no-repeat;
+            /* 調整圖片角度使用 ackground-position*/
+            background-position: 50%,50%;
+            background-attachment: fixed
+            
+            
+        }
+        #top-text{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /* top: 50%;
+            left: 50%; */
+            font-size: 25px;
+            background-color: #111;
+            color: white;
+            padding: 18px;
+            /* 字距 */
+            letter-spacing: 10px;
+            /* font-famil 字型 */
+            font-family: 'Lobster', cursive;
+            transform: translate(-50%,-50%);
+        }
+        #mid-img{
+            width: 100%;
+            height: 40vh;
+            background-image: url('../img/mountain.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 50%,50%;
+            position: relative;
+            background-attachment: fixed;
+            opacity: 0.8;
+        }
+        #mid-text{
+            width: 100%;
+            padding: 50px 80px;
+            text-align: justify; 
+        }
+        #mid-text h3{
+            text-align:center; 
+            letter-spacing: 10px;
+            
+        }
+        #mid-text p{
+            font-size: 20px;
+            letter-spacing: 2px;
+            word-break: normal;
+        }
+        #mid-img #second-text{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 25px;
+            background-color: unset;
+            color: white;
+            padding: 18px;
+            /* 字距 */
+            letter-spacing: 10px;
+            /* font-famil 字型 */
+            font-family: 'Lobster', cursive;
+            transform: translate(-50%,-50%);
+        }
+        #third-text{
+            width: 100%;
+            padding: 50px 80px;
+            letter-spacing: 5px;
+            text-align: center;
+        } 
+        #third-img{
+            width: 100%;
+            height: 40vh;
+            background-image: url(../img/Mountains-beautiful-scenery.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 50%,50%;
+            position: relative;
+            background-attachment: fixed;
+            opacity: 0.8;
+
+        }
+        #third-img #last-text{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 25px;
+            background-color: unset;
+            color: white;
+            padding: 18px;
+            /* 字距 */
+            letter-spacing: 10px;
+            /* font-famil 字型 */
+            font-family: 'Lobster', cursive;
+            transform: translate(-50%,-50%);
+        }
+        span{
+            font-size: 80px;
+        }
+        #four-text{
+            width: 100%;
+            padding: 50px 80px;
+            letter-spacing: 5px;
+            text-align: center;
+        }
+        #four-img{
+            width: 100%;
+            height: 100vh;
+            background-image: url(../img/yahoo.jfif);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-position: 50%,50%;
+            background-attachment: fixed;
+            position: relative;
+            opacity: 0.8;          
+        }
+        #four-img #end-text{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 25px;
+            background-color: unset;
+            color: white;
+            padding: 18px;
+            /* 字距 */
+            letter-spacing: 10px;
+            /* font-famil 字型 */
+            font-family: 'Fuzzy Bubbles', cursive;
+            transform: translate(-50%,-50%);
+
+        } 
+        #nav{
+            width: 100%;
+            height: 100px;
+            background-color: unset;
+            position: fixed;
+           
+
+            /* position: sticky;
+            top: 0;
+            left: 50%;
+            background-color: black; */
+
+            /*  修改Z軸，圖層往上或往下 */
+            z-index: 1;
+            text-align: end;
+            line-height: 100px;
+            padding-right: 30px;
+            
+        }
+        #nav a{
+            margin-left: 10px;
+            font-size: 25px;
+            color: blue;
+            font-family: 'Pacifico', cursive;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <a href="#topimg">top</a>
+        <a href="#mid-img">mid</a>
+        <a href="#third-img">bottom</a>
+    </div>
+    <div id="topimg">
+        <div id="top-text">
+            SCROLL DOWN
+        </div>
+    </div>
+    <div id="mid-text">
+        <!-- command palette 輸入 wrap with Abbreviation 打 p可以直接把所框起來的加上標籤，p*可以針對段落築一上標籤-->
+        <h3>PARALLAX DEMO</h3>
+        <p>Parallax scrolling is a web site trend where the background content is moved at a different speed than the foreground content while scrolling.</p>
+        <p>Nascetur per nec posuere turpis, lectus nec libero turpis nunc at, sed posuere mollis ullamcorper libero ante lectus, blandit pellentesque a, magna turpis est sapien duis blandit dignissim. Viverra interdum mi magna mi, morbi sociis.</p>
+        <p>Condimentum dui ipsum consequat morbi, curabitur aliquam pede, nullam vitae eu placerat eget et vehicula. Varius quisque non molestie dolor, nunc nisl dapibus vestibulum at, sodales tincidunt mauris ullamcorper, dapibus pulvinar, in in neque risus odio.</p>
+        <p>Accumsan fringilla vulputate at quibusdam sociis eleifend, aenean maecenas vulputate, non id vehicula lorem mattis, ratione interdum sociis ornare. Suscipit proin magna cras vel, non sit platea sit, maecenas ante augue etiam maecenas, porta porttitor placerat leo.</p>
+    </div>
+    <div id="mid-img">
+        <div id="second-text">
+            <span><p>LESS HEIGHT</p></span>
+        </div>
+    </div>
+    <div id="third-text">
+        <p>Scroll up and down to really get the feeling of how Parallax Scrolling works.</p>
+    </div>
+    <div id="third-img">
+        <div id="last-text">
+            <p>Scroll Up</p>
+        </div>
+    </div>
+    <div id="four-text">
+        <p>Scroll up and down to really get the feeling of how Parallax Scrolling works.</p>
+    </div>
+    <div id="four-img">
+        <div id="end-text">
+            <p>COOL!</p>
+        </div>
+    </div>
+</body>
+</html>

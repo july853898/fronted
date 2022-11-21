@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
+        #Box{
+            width: 500px;
+            height: 500px;
+            background-color: aqua;
+            float: left;
+            position: relative;
+            /* FIX會定住在瀏覽器上的畫面，不會隨著網頁滑動影響 */
+            /* bottom: 0;
+            right: 0;
+            position: fixed; */
+        }
+        #boxa{
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+            position: sticky;
+            top: 50px;
+            left: 100px;
+            transform:translate(-50%,-50%)
+            /* Sticky會在父層裡面去做移動 */
+            /* position: sticky;
+            top: 50px;
+            left: 80px; */
+            /* absolute
+            會脫離父層，會把這個圖形變成float(直接到圖層最上面)然後再做調整 */
+            /* position: absolute;
+            top: 20px;
+            left: 20px; */
+        }
+        #boxb{
+            width: 100%;
+            height: 1000vh;
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+        <div id="Box">
+            <div id="boxa"></div>
+        </div>
+        <div id="boxb"></div>
+</body>
+</html>

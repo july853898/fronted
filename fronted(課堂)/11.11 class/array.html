@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="input"></label>
+    <input type="text" id="input">
+    <div class="pushbtn">push</div>
+    <div class="popbtn">pop</div>
+    <div class="shiftbtn">shift</div>
+    <div class="unshiftbtn">unshift</div>
+    <div class="out">答案: <span></span></div>
+
+    <script>
+
+        const input = document.querySelector('#array-input');
+        const pushBtn = document.querySelector('.pushbtn')
+        const popBtn = document.querySelector('.popbtn')
+        const shiftBtn = document.querySelector('.shiftbtn');
+        const unshiftBtn = document.querySelector('.unshiftbtn')
+        const output = document.querySelector('.out span');
+
+        // let array = [];
+
+        // pushBtn.addEventListener('click',function(){
+        //     array.push(input.value);
+        //     output.textContent = array;
+        //     input.value = '';
+        // })
+
+        //  索引直  =  0 1 2 3 4 5 6 7    
+        let numbers = [1,2,3,4,5,6,7,8,9,10]
+        console.log(numbers);
+
+        // 迴圈
+        for(let i = 0; i < 50; i++){
+            console.log(i);
+        }
+        //  第一次 i = 0 印出了hi
+        //  第二次 i = 1 印出了hi
+        //  第三次 i = 2 印出了hi
+        //  第四次 i = 3 印出了hi
+        //  第五次 i = 4 此時i已經沒有小於4,因次停止了
+
+
+
+
+
+
+
+        let num = 1;
+        // i 到最後才會加一
+        console.log(num++);
+        console.log(num);
+    </script>
+</body>
+</html>

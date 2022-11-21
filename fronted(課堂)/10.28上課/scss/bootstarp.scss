@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    padding: 0 8%;
+}
+nav {
+    background-color: #212529;
+    
+    .nav-item {
+        a {
+            color: white;
+        }
+    }
+    navbar-brand {
+       
+    }
+    a.navbar-brand {
+        color:#ffc800;
+        margin-left: 300px;
+        
+        &:hover {
+            color: #ffc800;
+        }
+    }
+}
+.banner {
+    height: 1000px;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url('https://startbootstrap.github.io/startbootstrap-agency/assets/img/header-bg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+    color: white;
+    .title {
+        font-size: 2.5rem;
+        padding: 10px;
+    }
+    .text {
+        font-size: 4.5rem;
+        margin-bottom: 30px;
+    }
+    .button a{
+        width: 225px;
+        height: 69px;
+        padding: 20px;
+        color: white;
+        font-weight: bold;
+    }
+}
+section .content {
+        width: 100%;
+    .card-box {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+
+    }
+}

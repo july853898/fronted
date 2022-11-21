@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            padding-top: 40px;
+        }
+        #container {
+            width: 800px;
+            height: 400px;
+            border-radius: 4px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            background-color: whitesmoke;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            padding-top: 40px;
+        }
+        #container .heigh-input {
+            display: flex;
+            padding: 10px 0px;
+        }
+        #container .heigh-input input{
+            margin: 0 5px;
+        }
+        #container .weight-input {
+            display: flex;
+            padding: 10px 0px;
+        }
+        #container .weight-input input{
+            margin: 0 5px;
+            margin-bottom: 10px;
+        }
+        #container .btn {
+            width: 250px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        #container .btn .input-btn {
+            font-size: 20px;
+            border: 1px solid black;
+            background-color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #container .btn .clear-btn {
+            font-size: 20px;
+            border: 1px solid black;
+            background-color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #text-box {
+            width: 800px;
+            height: 300px;
+            border-radius: 4px;
+            position: relative;
+            margin: 0 auto;
+            background-color: whitesmoke;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            display: none;
+        }
+        #text-box.active{
+            display: block;
+        }
+        #text-box .box {
+            font-size: 30px;
+            padding-top: 50px;
+            position: absolute;
+            left: 20%;
+        }
+        #text-box .box .body {
+            padding: 20px 0px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>BMI計算</h1>
+        <div class="heigh-input">
+            <label for="heigh">身高: </label>
+            <input id="heigh" type="number" placeholder="請輸入身高">
+            <div>cm</div>
+        </div>
+        <div class="weight-input">
+            <label for="weight">體重: </label>
+            <input id="weight" type="number" placeholder="請輸入體重">
+            <div>kg</div>
+        </div>
+        <div class="btn">
+            <div class="input-btn">輸入</div>
+            <div class="clear-btn">清除</div>
+        </div>   
+    </div>
+    <div id="text-box">
+        <div class="box">
+            <div class="bmi" >BMI: <span></span></div>
+            <div class="body">身體質量指數: <span></span></div>
+            <div class="suggest">建議: <span></span></div>
+        </div>
+        
+    </div>
+    <script>
+        const heigh = document.querySelector('#heigh');
+        const weight = document.querySelector('#weight');
+
+        const in_btn = document.querySelector('.input-btn');
+        const cl_btn = document.querySelector('.clear-btn');
+        
+        const text_box = document.querySelector('#text-box')
+
+        const bmi = document.querySelector('.bmi span');
+        const body = document.querySelector('.body span');
+        const suggest = document.querySelector('.suggest span')
+        
+        
+
+        in_btn.addEventListener('click',function(){
+            
+            
+
+            let h = heigh.value;
+            let w = weight.value;
+            let bmi_text = (w/((h/100)*(h/100))).toFixed(1)
+
+            
+
+            if (h == '' || w == ''){
+                alert('請輸入完整數值');
+                // bmi.textContent = '請輸入完整數值';
+                // body.textContent = '請輸入完整數值';
+                // suggest.textContent = '請輸入完整數值';
+            }
+            else if(h <= 0 || w <= 0 ){
+                alert('沒有此數值');
+                // bmi.textContent = '沒有此數值';
+                // body.textContent = '沒有此數值';
+                // suggest.textContent = '沒有此數值';
+            }
+            else if (bmi_text < 18.5) {
+                text_box.classList.add('active');
+                bmi.textContent = bmi_text;
+                body.textContent = '體重過輕';
+                suggest.textContent = '多吃點';
+
+            }
+            else if (bmi_text < 24 && bmi_text >=18.5) {
+                text_box.classList.add('active');
+                bmi.textContent = bmi_text;
+                body.textContent = '正常範圍';
+                suggest.textContent = '很好,多維持';
+            }
+            else if (24<= bmi_text &&  bmi_text< 27) {
+                text_box.classList.add('active');
+                bmi.textContent = bmi_text;
+                body.textContent = '過重';
+                suggest.textContent = '小心喔,該注意了!';
+            }
+            else if (27<= bmi_text && bmi_text < 30) {
+                text_box.classList.add('active');
+                bmi.textContent = bmi_text;
+                body.textContent = '輕度肥胖';
+                suggest.textContent = '該注意身體了!!';
+            }
+            else if (30<= bmi_text && bmi_text < 35) {
+                text_box.classList.add('active');
+                bmi.textContent = bmi_text;
+                body.textContent = '中度肥胖';
+                suggest.textContent = '身體開始亮紅燈了!!';
+            }
+            else if (bmi_text >= 35 && bmi_text <= 200) {
+                text_box.classList.add('active');
+                bmi.textContent = bmi_text;
+                body.textContent = '重度';
+                suggest.textContent = '改善身體,刻不容緩!!!';
+            }
+            else if (bmi_text > 200 && bmi_text <= 250) {
+                text_box.classList.add('active');
+                bmi.textContent = bmi_text;
+                body.textContent = '超級重度';
+                suggest.textContent = '請不要放棄治療,人生還有希望';
+            }
+            else if (bmi_text >= 250) {
+                text_box.classList.add('active');
+                bmi.textContent = bmi_text;
+                body.textContent = '肥神';
+                suggest.textContent = '沒救了,下輩子好好愛惜身體';
+            }
+
+        });
+        
+        cl_btn.addEventListener('click',function(){
+            heigh.value = '';
+            weight.value = '';
+            bmi.textContent = '';
+            body.textContent = '';
+            suggest.textContent = '';
+            text_box.classList.remove('active');
+            
+        });
+
+
+        
+
+    </script>
+</body>
+</html>

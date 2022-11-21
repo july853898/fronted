@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            transition: 2s;
+            
+        }
+        body .box.active {
+            background-color: red;
+            width: 300px;
+            transition: 2s;
+        }
+        .border {
+            border: 1px solid blue;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .boxa {
+            width: 500px;
+            height: 500px;
+            background-color: orange;        
+        }
+
+    </style>
+</head>
+   
+<body>
+    
+    <div class="box"></div>
+    <div class="btn1 border">add active</div>
+    <div class="btn2 border" >remove active</div>
+    <div class="btn3 border">contain active</div>
+    <div class="btn4 border">toggle active</div>
+    <script>
+        // box
+        var box = document.querySelector('.box');
+
+        // 4個按鈕
+        // 增加class
+        var add = document.querySelector('.btn1');
+        // 移除class
+        var remove = document.querySelector('.btn2')
+        // 包含class => true/false
+        var contains = document.querySelector('.btn3')
+        // 切換
+        var toggle = document.querySelector('.btn4')
+
+     
+
+        add.onclick = function () {
+            box.classList.add('active');
+        };
+        remove.onclick = function () {
+            box.classList.remove('active');
+        };
+        contains.onclick = function () {
+            console.log(box.classList.contains('active'));
+        };
+        toggle.onclick = function () {
+            box.classList.toggle('active');
+        };
+
+    </script>   
+</body>
+</html>

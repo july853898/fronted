@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // fetch ("請求的網址","需求(可選)").then(function("伺服器端傳回來的反應"){
+        // return 將回應轉成相對應正確的格式 (轉譯後的資料);
+        // }).then(function(轉役過的資料){
+        // 就可以利用轉譯過的資料進行畫面上的顯示 
+        //  })
+
+
+        
+        fetch('./data.json').then(function(response){
+            console.log(response);
+            return response.json()
+            // 回傳 
+            // return response.json();
+        })
+        .then(function(data){
+            console.log(data);
+        });
+    </script>
+</body>
+</html>

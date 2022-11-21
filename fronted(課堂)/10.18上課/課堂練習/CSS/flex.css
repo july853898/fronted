@@ -1,0 +1,223 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    
+}
+#nav {
+    width: 100%;
+    height: 100px;
+    background-color: rgba(129, 127, 124, 0.767);
+    display: flex;
+    justify-content: space-between;
+}
+
+#nav .logo-text {
+    font-size: 15px;
+    width: 300px;
+    height: 100px;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+    padding-left: 10px;
+  
+}  
+
+#nav .logo-text .logo {
+   width: 50px;
+   height: 50px;
+   background-color: rgb(202, 115, 1);
+}
+#nav .logo-text .text {
+    display: block;
+    position: absolute;
+    top: 40%;
+    left: 25%;
+} 
+#nav .menu{
+    width: 1000px;
+    height: 100px;
+    /* border: 1px solid plum; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+}
+
+#nav .menu .button1{
+    width: 110px;
+    height: 20px;
+    background-color: yellow;
+}
+#nav .menu .button1:hover{
+    background-color: brown;
+    transition: all 1s;
+}
+#nav .menu .button2{
+    width: 110px;
+    height: 20px;
+    background-color: yellow;
+}
+#nav .menu .button2:hover{
+    background-color: brown;
+    transition: all 1s;
+}
+#nav .menu .button3{
+    width: 110px;
+    height: 20px;
+    background-color: yellow;
+}
+#nav .menu .button3:hover{
+    background-color: brown;
+    transition: all 1s;
+}
+#nav .menu .button4{
+    width: 110px;
+    height: 20px;
+    background-color: yellow;
+}
+#nav .menu .button4:hover{
+    background-color: brown;
+    transition: all 1s;
+}
+#nav .menu .button5{
+    width: 110px;
+    height: 20px;
+    background-color: yellow;
+}
+#nav .menu .button5:hover{
+    background-color: brown;
+    transition: all 1s;
+}
+#nav .tester-options {
+    width: 300px;
+    height: 100px;
+    /* border: 1px solid red; */
+    padding-right: 10px;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    align-items: center;
+   
+    
+    
+}
+#nav .tester-options .tester {
+    margin-right: 2px;
+    align-self: center;
+    padding-right: 45px;
+}
+#nav .tester-options .tester:hover{
+    animation: texxt 3s infinite;
+}
+@keyframes texxt{
+    0% {
+        color: aqua;
+    }
+    25% {
+        color: rgb(255, 0, 157);
+    }
+    50% {
+        color: rgb(236, 67, 0);
+    }
+    75% {
+        color: rgb(46, 43, 8);
+    }
+    100% {
+        color: rgb(30, 255, 0);
+    }
+}
+
+#nav .tester-options .option{
+    width: 35px;
+    position: absolute;
+    top: 40%;   
+}
+
+#nav .tester-options .option:hover span{
+    display: block;
+
+}
+span{
+    display: none;
+} 
+#nav .tester-options .option-1{
+    height: 20px;
+    background-color: rgb(183, 185, 31);
+}
+#nav .tester-options .option-2{
+    height: 20px;
+    background-color: rgb(15, 201, 98);
+}
+#nav .tester-options .option-3{
+    height: 20px;
+    background-color: brown;
+}
+
+
+
+
+#content {
+    width: 100%;
+    height: calc(100vh - 100px);
+    background-color: burlywood;
+    background-image: url('../img/A20220817211120637.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; 
+    display: flex;
+    justify-content: space-evenly; 
+    align-items: center;  
+}
+#content .box-1{
+    width: 300px;
+    height: 500px;
+    background-color: coral;
+    opacity: 0.5;
+    text-align: center;
+}
+#content .box-1:hover{
+    box-shadow: 10px 10px #f3d42e;
+}
+#content .box-2{
+    width: 300px;
+    height: 500px;
+    background-color: coral;
+    opacity: 0.5;
+    text-align: center;
+}
+#content .box-2:hover{
+    box-shadow: 10px 10px #f3d42e;
+}
+#content .box-3{
+    width: 300px;
+    height: 500px;
+    background-color: coral;
+    opacity: 0.5;
+    text-align: center;
+}
+#content .box-3:hover{
+    box-shadow: 10px 10px #f3d42e;
+}
+#content .box-4{
+    width: 300px;
+    height: 500px;
+    background-color: coral;
+    opacity: 0.5;
+    text-align: center;
+}
+#content .box-4:hover{
+    box-shadow: 10px 10px #f3d42e;
+}
+
+#content .box-up{
+    width: 100%;
+    height: 50%;
+    background-color: aqua;
+    opacity: 0.5;
+}
+

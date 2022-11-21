@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .img {
+            width: 500px;
+        }
+     </style>
+</head>
+<body>
+    <img class="img" src="./img/cat.jfif" alt="">
+
+    <script>
+        var img = document.querySelector('.img');
+        img.onclick = function () { 
+            console.log(img.src);
+           if(img.src == 'http://127.0.0.1:5500/fronted(%E8%AA%B2%E5%A0%82)/11.09%E4%B8%8A%E8%AA%B2/img/cat.jfif') {
+                img.src = 'img/cat1.jfif';
+           }else if(img.src == 'http://127.0.0.1:5500/fronted(%E8%AA%B2%E5%A0%82)/11.09%E4%B8%8A%E8%AA%B2/img/cat1.jfif'){
+                img.src = './img/cat.2.jpg';
+           }else {
+                img.src = 'http://127.0.0.1:5500/fronted(%E8%AA%B2%E5%A0%82)/11.09%E4%B8%8A%E8%AA%B2/img/cat.jfif'
+           }
+           
+           
+        };
+
+        // If (判斷){
+        //  要做的事
+        // } 
+        // 如果判斷為true 就會做"要做的事"
+        // 反之如果判斷是false 就不會做
+        
+        // 運算子
+        // == : 等於 => ===:全等於
+        // > : 大於
+        // < : 小於
+        // != :不等於 => !==:完全不等於
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,330 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+#main{
+   width: 100%;
+   height: 100vh;
+
+}
+#nav{
+    width: 250px;
+    height: 100%;
+    padding-top: 50px;
+    background-color: antiquewhite;
+    float: left;
+}
+#nav .logo{
+    width: 150px;
+    height: 150px;
+    margin:0 auto;
+    /* margin: 0 auto 50px auto; */  
+}
+#nav .logo img{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+#nav #list ul a{
+    font-size: 30px;
+    color: blue;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px 50px;
+    background-color: antiquewhite;
+}
+
+#nav #list ul a li {
+    padding: 10px;
+    background-color: unset;
+}
+#nav #list ul a:visited{
+    background-color: yellow;
+    color: green;
+}
+#nav #list ul a:hover li{
+    font-size: 40px;
+    animation-name: texxt;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+#nav #list ul a li:active{
+    color: black !important;
+    border: 1px solid pink;
+
+}
+/* css寫傾向用滑鼠做動作，因此手機上不會吃到:hover */
+@keyframes texxt{
+    0%{
+        color: brown;
+    }
+    25%{
+        color: aqua;
+    }
+    50%{
+        color: green;
+    }
+    100%{
+        color: purple;
+    }
+}
+
+
+
+
+#content{   
+    width: calc(100% - 250px);
+    height: 100%;
+    background-color: yellow;
+    float: left;
+    position: relative;
+}
+
+#content .big-box{
+    width: 1000px;
+    height: 800px;
+    /* background-color: aqua; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+/* #content .big-box .card:hover{
+    width: 25%;
+    height: 25%;
+    border-radius: 50%;
+    
+} */
+#content .big-box .card{
+
+    width: calc((100% / 3) - 5px);
+    height: 100%;
+    float: left;
+}
+#content .big-box .card:hover{
+    border-radius: 80px; 
+    transition:all 0.8s cubic-bezier(0,.96,.98,.07);
+    transform: scale(50%,50%);
+    
+}
+
+#content .big-box .card.first{
+    background-image: url('https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BBkk7IK.img?h=768&w=1080&m=6&q=60&o=t&l=f&x=1380&y=944');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 62%,50%;
+}
+#content .big-box .card.first:hover{
+    background-image: url('https://upload.wikimedia.org/wikipedia/zh/thumb/b/b0/Doraemon_Charactor.jpg/220px-Doraemon_Charactor.jpg');
+
+}
+
+#content .big-box .card.second{
+    background-image: url('https://static.popdaily.com.tw/u/202105/98ea8476-b01d-4366-a87d-18eee9becb50.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 7.5px;
+}
+#content .big-box .card.third{
+    background-image: url('https://s.yimg.com/ny/api/res/1.2/Tzx.UO2FEhFYfgfaeoN3Sg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTYyOQ--/https://s.yimg.com/uu/api/res/1.2/IjmCAx2RRM4ucs8lpnLk3A--~B/aD04ODA7dz04OTY7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/gotv_ctitv_com_tw_678/9c4a4f69d3ede2b2680663ed75eba9ac');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 41%,50%;
+    
+}
+
+@media (max-width:1280px) {
+    /* 權重要一樣重，或者要大過它，不然會無法作用 */
+
+    #content .big-box{
+        width: 800px;
+        height: 600px;
+    }
+    #content .big-box .card{
+        width: 100%;
+        height: calc(50% - 5px);
+        float: left;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        /* transition:3s */
+    }
+    #content .big-box .card.first{
+        margin-bottom: 10px;
+    }
+    #content .big-box .card.second, #content .big-box .card.third{
+        width: calc(50% - 8px);
+        
+    }
+    #content .big-box .card.second{
+        margin: 0 10px 0 5px;
+    }
+    #nav #list ul a{
+        font-size: 30px;
+        /* color: red; */
+        text-decoration: none; 
+        display: inline-block; 
+        margin: 5px 50px;
+    }
+    
+}
+ @media (max-width:1050px) {
+    #nav{
+        width: 100%;
+        height: 100px;
+        background-color: antiquewhite;
+        padding-top: 0px;
+     
+    }
+    
+    #content{
+        width: 100%;
+        height: calc(100vh - 100px);
+    }
+    #content .big-box{
+        width: calc(100% - 50px);
+        height: 650px;
+        /* border: 1px solid black; */
+        padding: 2% 15px;
+        /* background-color: aqua; */
+        /* position: absolute;
+        top: 50%;
+        left: 50%; */
+        /* transform: translate(-50%,-50%); */
+    }
+    #nav .logo{
+        width: 100px;
+        height: 100px;
+        /* padding: 10px 10px 10px 10px; */
+        /* padding: 13px; */
+        margin:0px 0px 0px 60px;
+        float: left;
+    }
+    #nav .logo img{
+        width: 100%;
+        height: 100%;
+        float: left;
+        /* margin: 0px; */
+        
+    }
+    
+    #nav #list{
+        font-size: 30px;
+        /* color: red; */
+        text-decoration: none;
+        display: inline-block;
+        /* margin: 10px 70px; */
+        float: right;
+        margin: 0px 20px 0px 0px;
+    }
+    #nav #list ul a{
+        font-size: 30px;
+        /* color: red; */
+        text-decoration: none;
+        display: inline-block;
+        margin: auto 10px;
+    }
+    #content .big-box .card{
+        width: 100%;
+        height: 50%;
+        float: left;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        /* transition:3s */
+    }
+
+    }
+@media (max-width:510px) {
+    #nav{
+        padding: 0px;
+        position: relative;
+    }
+    #nav .logo{
+        margin: 0px;
+        padding: 0px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 80px;
+        height: 80px;          
+    }
+
+    #nav #list{
+        width: 90px;
+        height: 90px;
+        background-color: aqua;
+        float: none;
+        float: left;
+        margin: 0px;
+        font-size: 5px;     
+        padding: 0px;
+        text-align: center;
+        position: relative;
+
+    }
+    #nav #list:hover{
+        background-color: rgb(245, 213, 31);
+        transition: all 1.5s;
+    }
+    #nav #list ul a{
+        padding-top: 2px;
+        font-size: 20px;
+        letter-spacing: 2px;
+        
+    }
+    #nav #list ul{
+        padding: 0px 0px 0px 0px;
+        margin: 0;
+        position: absolute;
+        display: none;
+        /* display: none */
+    }
+    #nav #list:hover ul{
+        display: block;
+        z-index: 1;
+    } 
+
+    #nav #list ul a li{
+        margin: 0;
+        padding: 0;
+        font-size: 20;
+    }
+    #nav #list a{
+        margin: 0;
+        padding: 0;
+    }
+    #content{
+        width: 100%;
+        height: calc(100vh - 100px);
+    }
+    #content .big-box{
+        width: 100%;
+        height: 100%;
+        padding: 0px;
+        margin: 0px;
+    }
+    #content .big-box .card{
+        width: 100%;
+        height: calc((100% / 3));
+        float: none;
+    }
+    #content .big-box .card.second, #content .big-box .card.third{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    #content .big-box .card.first{
+            margin-bottom: 0px;
+        } 
+    #nav #list ul a li:hover{
+        font-size: 30px;            
+    }  
+}
+

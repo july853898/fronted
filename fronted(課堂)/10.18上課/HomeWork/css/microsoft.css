@@ -1,0 +1,1312 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI',SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+body {
+    margin: 0;
+    padding: 0;
+    
+}
+.container{
+    padding: 0px 95px;
+    margin: 0 56px;
+}
+#nav nav{
+    width: 100%;
+    height: 54px;
+    padding-left: 8%;
+    padding-right: 2%;
+    /* padding-top: 10px; */
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    /* padding-bottom: 15px; */
+    justify-content: space-between;
+}
+#nav nav #top {
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid blue; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+#nav nav #top .left-box {
+    /* width: 40%; */
+    /* border: 1px solid gray; */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+#nav nav #top .left-box a{
+    color: black;
+}
+#nav nav #top .left-box a:active{
+    border: 1px dashed black;
+}
+nav .logo {
+    width: 108px;
+    height: 25px;
+    /* border: 1px solid red; */
+}
+nav .menu{
+    width: calc(100% - 108px);
+    height: 100%;
+    /* border: 1px solid black; */
+}
+nav #top #burger-box {
+    display: none;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+nav .menu {
+    font-size: 15px;
+    width: 425px;
+    height: 54px;
+    line-height: 54px;
+    margin-left: 40px;
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 1;
+}
+nav .menu>a {
+    margin-right: 8px;
+    text-decoration: none;
+    color: black;
+    
+}
+nav .menu>a:hover {
+    text-decoration: underline;
+}
+nav .menu>a:active {
+    border: 1px dashed black;
+    
+}  
+nav .miscellaneous {
+    font-size: 15px;
+    width: 535px;
+    height: 54px;
+    line-height: 54px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+nav .miscellaneous .al-mi {
+    /* width: px; */
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 30px;
+    /* border: 1px solid gray; */
+}
+nav .miscellaneous a {
+    /* margin-right: 15px;*/
+    color: black;
+    text-decoration: none;
+}
+nav .miscellaneous a:hover{
+    text-decoration: underline;
+}
+
+nav .miscellaneous a:active{
+    border: 1px dashed black;
+}
+nav .miscellaneous .al-mi {
+    display: flex;
+    flex-wrap: wrap;
+    /* border: 1px solid red; */
+}
+
+nav .miscellaneous .al-mi .text-1 {
+    margin: 0 8px;
+    
+}
+nav .miscellaneous .al-mi .text:active {
+    /* border: 1px dashed black; */
+}
+nav .miscellaneous .al-mi .text-1 .search-box {
+    width: 1230px;
+    height: 455px;
+    /* border: 1px solid brown; */
+    background-color: #f2f2f2;
+    z-index: 2;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    display: none;
+    font-size: 12px;
+}
+
+nav .miscellaneous .al-mi .text-1 .search-box ul {
+    margin: 0;
+    padding: 0;
+}
+nav .miscellaneous .al-mi .text-1 .search-box ul li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+nav .miscellaneous .al-mi .text-1 .search-box .up-box {
+    width: 100%;
+    height: 470px;
+    display: flex;
+    justify-content: space-around;
+}
+nav .miscellaneous .al-mi .text-1 .search-box .down-box {
+    width: 100%;
+    height: 30px;
+    background-color: #e6e6e6;
+    border-bottom: 2px solid black;
+    /* border: 1px solid rebeccapurple; */
+}
+nav .miscellaneous .al-mi .text-1 .search-box .down-box .map {
+    width: 50%;
+    height: 100%;
+    font-size: 14px;
+    text-align: center;
+    line-height: 30px;
+    margin: auto auto;
+    
+    /* border: 1px solid gray; */
+}
+nav .miscellaneous .al-mi .text-1 #test {
+    display: none;
+}
+nav .miscellaneous .al-mi .text-1 #test:checked + .search-box {
+    display: block;
+}
+.swiper-box {
+    width: 100%;
+    margin-bottom: 60px;
+    
+}
+
+nav .miscellaneous .personal {
+    width: 220px;
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    align-items: center;
+    /* border: 1px solid black; */
+}
+nav .miscellaneous .personal .text-1 {
+    width: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    /* align-items: center; */
+}
+nav .miscellaneous .personal .text-2 {
+    width: 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* border: 1px solid slateblue; */
+}
+nav .miscellaneous .personal .text-2 a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+
+nav .miscellaneous .personal .text-2 .img{
+    width: 30px;
+    height: 30px;
+    margin: 0px 0px 5px 0px;
+    /* border: 1px solid red; */
+    
+    /* display: inline-block; */
+    /* border: 1px solid rebeccapurple; */
+    /* position: absolute;
+    top: 9px; */
+}
+nav .miscellaneous .personal .text-2 .img img{
+    width: 100%;
+}
+
+main #banner {
+    height: 100%;
+    position: relative;
+    margin-bottom: 20px;
+    
+}
+main #banner-2 {
+    height: 100%;
+    position: relative;
+    
+}
+img {
+    width: 100%;
+    height: 90%;
+}
+.swiper-box {
+    display: flex;
+    justify-content: center;
+}
+.swiper-box .left-button, .swiper-box .right-button {
+    font-size: 30px;
+    cursor: pointer;  
+}
+.swiper-box .left-button:hover {
+    transform: translate(-50%,0%);
+    transition: 0.2s;
+}
+.swiper-box .right-button:hover {
+    transform: translate(50%,0%);
+    transition: 0.2s;
+}
+.swiper-box .left-button:focus, .swiper-box .right-button:focus {
+    border: 2px dashed black;
+}
+
+.swiper-box .swiper-pagination {
+    position: static;
+    top: 623px;
+    left: 48%;
+    width: 50px;
+    z-index: 0;
+    bottom: 0px;
+    line-height: 42px;
+    margin: 0px 50px;
+}
+
+main #banner a {
+    color: black    ;
+}
+main #banner .produce-title {
+    width: 30%;
+    height: 50%;
+    /* border: 1px solid red; */
+    position: absolute;
+    top: 28%;
+    left: 62%;   
+}
+main #banner .produce-title h1{
+    font-size: 37px;
+    font-weight: bold;
+    margin: 3% 0;
+}
+main #banner .produce-title .new {
+    text-align: center;
+    padding: 3px;
+    font-weight: bold;
+    width: 60px;
+    background-color: #ffb900;
+}
+main #banner .produce-title a{
+    text-decoration: none;
+}
+
+main #banner .produce-title .sumbit
+ {
+    text-align: center;
+    padding: 10px 12px;
+    width: 90px;
+    color: white;
+    background-color: #0067b8;
+    font-weight: bold;
+    margin: 20px 0px 0px 0px;
+}
+
+main #content .search-button {
+    width: 100%;
+    height: 80px;
+    /* border: 1px solid red; */
+    
+}
+main #content .windows-search {
+    width: 100%;
+    height: 104px;
+    /* border: 1px solid palegreen; */
+    margin-bottom: 70px;
+    display: flex;
+    justify-content: center;
+    
+}
+main #content .windows-search img {
+    width: 40px;
+    height: 40px;
+}
+main #content .windows-search a {
+    color: #0067b8;
+}
+main #content .search-button {
+    width: 100%;
+    height: 100px;
+    padding: 0 6%;
+    margin: -15px 0px 25px 0px;
+    
+    /* border: 1px solid rebeccapurple; */
+
+}
+main #content .search-button .button-box {
+    width: 100%;
+    height: 100%;
+    font-size: 30px;
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main #content .search-button .button-box a {
+    color: black;
+}
+main #content .search-button .button-box .left-button:hover {
+    transform:translate(-50%,0%);
+    transition: 0.5s;
+}
+main #content .search-button .button-box .right-button:hover {
+    transform:translate(50%,0%);
+    transition: 0.5s;
+}
+
+main #content .search-button .button-box .middle-button{
+    font-size: 12px;
+    margin: 10px 25px;
+    display: flex;
+    justify-content: center; 
+}
+main #content .search-button .button-box .middle-button .black-1 {
+    margin-right: 15px;
+}
+
+
+main #content .windows-search .button-1{
+    width: 163px;
+    height: 104px;
+    /* border: 1px solid red; */
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+main #content .windows-search .button-1 img{
+    margin-bottom: 5px;
+}
+main #content .windows-search .button-2{
+    width: 160px;
+    height: 104px;
+    /* border: 1px solid red; */
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px 20px; 
+}
+main #content .windows-search .button-2 img{
+    margin-bottom: 5px;
+}
+main #content .windows-search .button-3{
+    width: 160px;
+    height: 104px;
+    /* border: 1px solid red; */
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+main #content .windows-search .button-3 img{
+    margin-bottom: 5px;
+}
+main #content .product-introduce {
+    width: 100%;
+    height: 417px;
+    padding: 0px 5%;
+    margin-bottom: 80px;
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: space-evenly;
+}
+main #content .product-introduce .introduce-card{
+    width: 390px;
+    height: 100%;
+    margin: 0px 12px;
+    /* border: 1px solid red; */
+   
+}
+main #content .product-introduce .introduce-card .card-img {
+    width: 100%;
+    height: 50%;
+    margin-bottom: 15px;
+    /* border: 1px solid orange; */
+    
+}
+.other {
+    
+    width: 490px;
+    display: flex;
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    /* border: 1px solid; */
+
+}
+.other .text {
+    margin-bottom: 20px;
+}
+.other h1 {
+    font-size: 37px;
+    margin: 20px 0px;
+}    
+
+.other .produce-title .sumbit-1 {
+    /* width: 800px; */
+    padding: 0px;
+    width: 120px;   
+    height: 40px;
+    padding: 10px;
+    text-align: center;
+    line-height: 20px;
+    background-color: #0067b8;
+    font-weight: bold;
+    border-radius: 1px;
+    color: white;
+    margin-right: 20px;
+    
+}
+.other .produce-title .sumbit-1:active {
+    border: 3px dashed white;
+}
+.other .produce-title .sumbit-2 {
+    color: #0067b8;
+    font-weight: bold;
+    
+}
+.other .produce-title .sumbit-2:hover {
+    text-decoration: underline;
+    
+}
+.other .produce-title .sumbit-2:active {
+    border: 1px dashed #0067b8;
+}
+.other .produce-title .sumbit-2:hover span{
+    padding-left: 5px;
+    transition: 0.2s;
+    
+
+}
+main #banner .other .produce-title {
+    width: 500px;
+    /* border: 1px solid; */
+    position: static;
+}
+main #content .product-introduce .new {
+    padding: 3px;
+    width: 65px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    background-color: #ffb900;
+}
+main #content .product-introduce a{
+    text-decoration: none;
+}
+main #content .product-introduce .none {
+    margin-bottom: 30px;
+    width: 60px;
+    /* background-color: #ffb900; */
+}
+main #content .product-introduce h1 {
+    color: black;
+    
+}
+main #content .product-introduce .text {
+    color: black;
+    padding-bottom: 30px;
+}
+
+main #content .product-introduce .introduce-card .sumbit a {
+    width: 90px; 
+    color: #0067b8;
+    font-weight: bold;
+    text-decoration: none;   
+}
+main #content .product-introduce .introduce-card .sumbit a:hover{
+    text-decoration: underline;
+}
+main #content .product-introduce .introduce-card .sumbit a:hover .sumbit span{
+    margin-left: 3px;
+    transition: 0.3s;
+}
+main #content .product-introduce .introduce-card h1 {
+    margin: 10px 0;
+}
+main .scroll{
+    position: relative;
+}
+main #second-banner {
+    width: 100%;
+    height: 600px;
+    /* border: 1px solid red;   */
+    position: relative;
+    /* display: flex;
+    justify-content: center; */
+    padding: 0 6%;
+    margin-bottom: 2%;
+}
+main #second-banner a {
+    text-decoration: none;
+    color: black;
+}
+main #second-banner a .text-box {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    
+}
+main #second-banner a .text-box h1{
+    font-size: 37px;
+}
+main #second-banner a .text-box .text {
+    width: 242px;
+    margin-bottom: 20px;
+    
+}
+main #second-banner a .text-box .sumbit  {
+    
+    width: 90px;
+    height: 40px;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    background-color: #0067b8;  
+}
+main #third-content {
+    width: 100%;
+    height: 510px;
+    margin: 0 -5px;
+    padding: 0 6%;
+    /* border: 1px solid pink; */
+    
+}
+main #third-content .title {
+    width: 100%;
+    height: 60px;
+    font-size: 37px;
+    padding: 0 5px;
+    /* border: 1px solid orange ; */
+}
+main #third-content .title p {
+    font-weight: bold;
+    margin: 0;
+    padding: 0; 
+}
+
+main #third-content .introduce-card{
+    width: 100%;
+    height: 450px;
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid blue; */
+}  
+main #third-content .card-box {
+    width: calc((100% - 72px) / 4);
+    /* border: 1px solid red; */
+    /* padding: 0px 5px;  */
+           
+}
+
+main #third-content .card-box a {
+    text-decoration: none;
+    color: black;   
+}
+main #third-content .card-photo {
+    width: 100%;
+    margin-bottom: 3%;
+    /* border: 1px solid green; */
+}
+main #third-content .card-text {
+    font-weight: normal;
+    width: 100%;
+    height: 50%;
+    letter-spacing: 1px;
+    
+    /* border: 1px solid yellow;    */
+}
+main #third-content .card-text .new {
+    font-size: 17px;
+    /* font-weight: bold; */
+    width: 65px;
+    height: 25px;
+    text-align: center;
+    line-height: 28px;
+    font-weight: bold;
+    background-color: #ffb900;
+    margin-bottom: 5px;
+    /* border: 1px solid red; */
+}
+main #third-content .card-text .none {
+    /* font-size: 18px; */
+    /* font-weight: bold; */
+    width: 60px;
+    height: 25px;
+    /* text-align: center;
+    line-height: 25px; */
+    /* background-color: #ffb900; */
+    margin-bottom: 5px;
+    /* border: 1px solid red; */
+}
+main #third-content .card-text .big-title {
+    margin-bottom: 10px;
+    font-size: 29px;
+    font-weight: bold;
+    
+}
+main #third-content .card-text .text {
+    font-size: 16px;
+    word-break: break-all;
+    margin-bottom: 10px;
+}
+main #third-content .card-box .sumbit  {
+    
+    width: 95px;
+    height: 40px;
+    color: #0067b8;
+    /* text-align: center; */
+    line-height: 40px;
+    /* background-color: #0067b8;   */
+}
+main #third-content .card-box a {
+    font-weight: bold;
+    display: inline-block;
+    
+}
+main #third-content .card-box a:hover span {
+    margin-left: 5px;
+    transition: 0.3s;
+}
+main #third-content .card-box a:hover.sumbit{
+    text-decoration: underline;
+}
+main #bottom-text {
+    width: 100%;
+    height: 100px;
+    padding: 0 6%;
+    /* border: 1px solid red; */
+}
+main #bottom-text .youtube-good {
+    width: 100%;
+    height: 35px;    
+    display: flex;
+    flex-wrap: wrap;
+    /* border: 1px solid olive; */
+}
+
+main #bottom-text .youtube-good .first-text {
+    width: 100px;
+    line-height: 35px;
+    /* border: 1px solid black; */
+}
+main #bottom-text .youtube-good .second-text{
+    width: 35px;
+    line-height: 35px;
+    text-align: center;
+    font-size: 25px;
+    margin-right: 5px;
+    margin-left: 5px;
+    /* border: 1px solid black; */
+}
+main #bottom-text .youtube-good .second-text a {
+    color: black;
+}
+main #bottom-text .youtube-good .second-text:active {
+    border: 2px dashed blue;
+}
+main #bottom-text .youtube-good .third-text{
+    width: 35px;
+    line-height: 35px;
+    text-align: center;
+    font-size: 25px;
+    /* border: 1px solid black; */
+}
+main #bottom-text .youtube-good .third-text a {
+    color: black;
+}
+main #bottom-text .youtube-good .third-text:active {
+    border: 2px dashed blue;
+}
+main .scroll .backtotop {
+    width: 110px;
+    height: 41px;
+    /* border: 1px solid blue; */
+    display: inline-block;
+    position: sticky;
+    text-align: center;
+    line-height: 41px;
+    bottom: 46%; 
+    left: 94%;
+    z-index: 1;
+    background-color: rgba(212, 208, 208, 0.87); 
+}
+main .scroll .backtotop:hover {
+    background-color: white;
+    box-shadow: 0px 0px 2px black;
+} 
+footer #footer-info {
+    width: 100%;
+    height: 400px;
+    background-color: #f2f2f2;
+    /* border: 1px solid rebeccapurple; */
+    padding: 0 6%;
+    padding-top: 35px;
+    padding-bottom: 5px;
+}
+footer #footer-info .up-information{
+    width: 100%;
+    height: 90%;
+    /* border: 1px solid rgb(27, 180, 160); */
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+footer #footer-info .up-information .card-text {
+    width: calc(100% / 6);
+    height: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;   
+}
+footer #footer-info .up-information .card-text p{
+    margin: 10px 0px;
+
+}
+footer #footer-info .up-information .card-text a{
+   text-decoration: none;
+   color: black;  
+}
+footer #footer-info .up-information .card-text .text-title {
+    font-size: 17px;
+}
+footer #footer-info .up-information .card-text .text a {
+    display: inline-block;
+}
+footer #footer-info .up-information .card-text .text a:hover {
+    text-decoration: underline;
+}
+footer #footer-info .down-info {
+    width: 100%;
+    height: 10%;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-between;
+}
+footer #footer-info .down-info .left-taiwan {
+    width: 95px;
+    height: 100%;
+    line-height: 35px;
+    /* border: 1px solid forestgreen; */
+    display: flex;
+    justify-content: space-between;
+}
+footer #footer-info .down-info .left-taiwan .img {
+   font-size: 25px;
+   color: gray;
+}
+footer #footer-info .down-info .left-taiwan .text {
+    font-size: 12px;
+ }
+footer #footer-info .down-info .right-text {
+    width: 580px;
+    height: 100%;
+    line-height: 35px;
+    font-size: 12px;
+    /* border: 1px solid forestgreen; */
+    display: flex;
+    justify-content: space-between;
+}
+footer #footer-info .down-info .right-text .text a {
+    text-decoration: none;
+    color: black;
+}
+footer #footer-info .down-info .right-text .text p {
+    margin: 0;
+}
+
+.more-box-s {
+    display: none;
+}
+#more-box:checked + .more-box-s {
+    display: block;
+}
+#more-box {
+    display: none;
+}
+.more {
+    display: none;
+}
+
+
+.more .more-box-s {
+    width: 170px;
+    height: 110px;
+    z-index: 3;
+    background-color: #f2f2f2;
+    position: absolute  ;
+    
+}
+.more .more-box-s a {
+    width: 100%;
+    
+}
+.burger {
+    display: none;
+}
+.sw {
+    display: none;
+}
+nav .miscellaneous .al-mi .text-1 .search-box {
+    height: 470px;
+}
+@media (max-width:1580px) {
+    main #banner .produce-title {
+        width: 280px;
+        height: 200px;
+        /* border: 1px solid red; */
+        position: absolute;
+        top: 28%;
+        left: 62%;   
+    }
+}
+@media (max-width:1560px) {
+    .other {
+        width: 350px;
+    }
+}
+@media (max-width:1400px) {
+    #nav #top .miscellaneous {
+        width: 285px;
+        /* border: 1px solid black; */
+        display: flex;
+        line-height: 0px;
+        justify-content: flex-end;
+    }
+    #nav #top .miscellaneous .al-mi {
+        width: 52%;
+        height: 100%;
+        line-height: 50px;
+        /* border: 1px solid black; */
+        margin-right: 0px;
+        /* align-self: center; */
+    }
+    #nav #top .miscellaneous .personal {
+        width: 32%;
+        height: 100%;
+        flex-wrap: nowrap;
+        /* border: 1px solid black; */
+    }
+    #nav #top .miscellaneous .al-mi .text-1 {
+        margin: 0%;
+        margin-right: 10px;
+        padding: 0%;
+    }
+    
+
+
+    nav .miscellaneous a span.s {
+        display: none;
+    
+    }
+    #nav #top .miscellaneous .personal .text-1 a span.shop {
+        display: none;
+    }
+    #nav #top .miscellaneous .personal .text-1 {
+        margin-left: 10%;
+    }
+    #nav #top .miscellaneous .personal .text-2 a span.login {
+        display: none;   
+    }
+    .other h1{
+        font-size: 27px;
+    }
+}
+
+@media (max-width:1085px){
+    #nav nav{
+        padding-left: 4%;
+    }
+    nav .menu {
+        width: 373px;
+        margin-left: 30px;
+    }
+    main #banner .produce-title {
+        width: 97%;
+        height: 280px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-left: 50px;
+        padding-right: 50px;
+        position: absolute;
+        left: 1.5%;
+        top: 79%;
+        z-index: 1;
+        background-color: white;
+        /* border: 1px solid black ; */
+        box-shadow: 0px 0px 1px  black;
+        float: right;
+    }
+    main #banner-2 .produce-title {
+        width: 97%;
+        height: 280px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-left: 50px;
+        padding-right: 50px;
+        position: absolute;
+        left: 1.5%;
+        top: 79%;
+        z-index: 1;
+        background-color: white;
+        /* border: 1px solid black ; */
+        box-shadow: 0px 0px 1px  black;
+        float: right;
+    }
+    main #banner {
+        height: 570px;
+        margin-bottom: 176px;
+    }
+    main #banner-2 {
+        height: 570px;
+        margin-bottom: 176px;
+    }
+    .other {
+        width: 100%;
+        top: 0px;
+        left: 0px;
+        position: static;
+        padding: 0px;
+    }
+    nav .miscellaneous .al-mi .text-1 .search-box {
+        width: 1000px;
+        height: 700px;
+        z-index: 2;
+        left: 1%;
+    }
+    nav .miscellaneous .al-mi .text-1 .search-box .up-box {
+        width: 100%;
+        height: 670px;
+        
+
+    }
+    main #content .product-introduce {
+        width: 100%;
+        height: 1000px;
+        flex-wrap: wrap ;
+        padding: 0px;
+    }
+    main #content .product-introduce .introduce-card {
+        width: 50%;
+        height: 50%;
+        padding: 0 12px;
+        margin: 0px;
+    }
+    main #second-banner {
+        padding: 0;
+        margin-bottom: 150px;
+    }
+    main #second-banner a .text-box {
+        width: 97%;
+        left: 1.5%;
+        top: 85%;
+        /* border: 1px solid; */
+        background-color: white;
+        box-shadow: 0px 0px 1px black;
+        padding: 45px;
+        padding-top: 30px;
+    }
+    main #second-banner a .text-box h1 {
+        font-size: 21px;
+    }
+    main #third-content {
+        padding: 0 1%;
+    } 
+    main #third-content .title {
+        font-size: 25px;
+    }
+    main #third-content {
+        height: 950px;
+        padding: 0;
+        margin: 0px;
+    }
+    main #third-content .introduce-card {
+        height: 900px;
+        flex-wrap: wrap;
+    }
+    main #third-content .card-box {
+        width: 50%;
+        padding: 0 12px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    main #third-content .title p  {
+        padding: 0 12px;
+    }
+    main #bottom-text {
+        padding: 0 12px;
+    }
+    main #third-content .card-box a {
+        width: 100%;
+    }
+    .swiper-button-next {
+        top: 93%;
+    }
+    .swiper-button-prev {
+        top: 93%;
+    }
+    .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+        bottom: 6%;
+    }
+    .other {
+        width: 97%;
+        /* border: 1px solid red; */
+        top: 81%;
+        left: 0%;
+        margin: 0%;
+        margin-left: 12px;
+        padding: 35px 40px;
+        background-color: white;
+        box-shadow: 0px 0px 1px black;
+    }
+    footer #footer-info {
+        height: 100%;
+        padding: 0 12px;
+        
+    }
+    footer #footer-info .up-information .card-text {
+        width: calc(100% / 3);
+        padding: 30px 0;
+    }
+}
+ 
+@media (max-width:885px){
+    .menu .sur {
+        display: none;
+    }
+    .menu .xbox {
+        display: none;
+    }
+    .more {
+        display: block;
+        font-size: 13px;
+    }
+
+    .more .more-box-s {
+        box-shadow: 0px 0px 1px black;
+        padding-left: 20px;
+        border-bottom: 2px solid black;
+    }
+    
+}
+@media (max-width:865px){
+
+    #nav nav #top .menu {
+        display: none;
+    }
+    nav .logo {
+        position: absolute;
+        top: 2%;
+        left: 40%;
+    }
+    #nav #top .miscellaneous {
+        width: 100%;
+        justify-content: space-between;
+    }
+    #nav nav {
+        padding: 0;
+    }
+    .right-box {
+        width: 100%;
+    }
+    #nav #top .miscellaneous .personal {
+        width: 14%;
+    }
+    nav .miscellaneous .personal .text-1 {
+        width: 100%;
+    }
+    nav .miscellaneous .personal .text-2 {
+        width: 100%;
+    }
+    .burger {
+        display: block;
+    }
+    .text-1 .text {
+        display: none;
+    }
+    #nav #top .miscellaneous .al-mi {
+        padding-left: 12px;
+    }
+    nav .miscellaneous .al-mi .text-1 .search-box .up-box span {
+        display: none;
+        padding: 10px 10px 10px 10px;
+        
+    }
+    nav .miscellaneous .al-mi .text-1 .search-box .up-box span ul {
+        width: 100%;
+        border-bottom: 1px solid #e6e6e6;
+        display: inline-block;
+    }
+    nav .miscellaneous .al-mi .text-1 .search-box .up-box span ul.bottom {
+        border-bottom: 2px solid black;
+    }
+    nav .miscellaneous .al-mi .text-1 .search-box .down-box span
+    nav .miscellaneous .al-mi .text-1 .search-box {
+        width: 100%;
+    }
+    nav .miscellaneous .al-mi .text-1 .search-box .up-box .sw {
+        display: block;
+        margin: 0;
+        width: 100%;
+    }
+    nav .miscellaneous .al-mi .text-1 .search-box .down-box span {
+        display: none;
+        
+        
+        
+    }
+    nav .miscellaneous .al-mi .text-1 .search-box .down-box {
+        height: 0px;
+    }
+    nav .miscellaneous .al-mi .text-1 .search-box .up-box {
+        height: 100%;
+        justify-content: flex-start;
+        font-size: 14px;
+        
+    }
+    nav .miscellaneous .al-mi .text-1 .search-box {
+        width: 100%;
+        height: 700px;
+    }
+    nav .miscellaneous .al-mi .text-1 .search-box .down-box {
+        display: none;
+    }
+    nav .miscellaneous .al-mi .text-1 .search-box {
+        left: 0px;
+        height: 674px;
+    }
+    .right-box .text-1 label {
+        font-size: 20px;
+    }
+    main #banner .produce-title {
+        height: 250px;
+        position: static;
+        width: 100%;
+        left: 0px;
+        box-shadow: none;    
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    main #banner-2 .produce-title {
+        height: 250px;
+        position: static;
+        width: 100%;
+        left: 0px;
+        box-shadow: none;    
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    .other {
+        width: 100%;
+        left: 0px;
+        margin: 0;
+        box-shadow: none;
+        padding: 0px;
+    }
+}
+@media (max-width:600px) {
+    main #content .windows-search {
+        width: 370px;
+        height: 210px;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        margin-bottom: 30px;
+    }
+    .swiper-box {
+        margin-bottom: 27px;
+    }
+}
+@media (max-width:540px) {
+    main #content .product-introduce .introduce-card {
+        width: 100%;
+    }
+    main #content .product-introduce .introduce-card .sumbit {
+        margin-bottom: 50px;
+    }
+    main #banner .produce-title {
+        height: 228px;
+        width: 100%;
+        font-size: 14px;
+        padding-left: 18px;
+        left: 0px;
+        box-shadow: 0px 0.5px 1px black;
+    }
+    main #banner {
+        margin-bottom: 130px;
+    }
+    main #content .product-introduce {
+        height: 100%;
+        margin-bottom: 0px;
+    }
+    main #second-banner a .text-box {
+        width: 100%;
+        left: 0px;
+        padding: 15px;
+        height: 220px;
+        box-shadow: 0 0 0 0;
+    }
+    main #second-banner a .text-box .text {
+        width: 100%;
+    }
+    main #third-content .card-box {
+        width: 100%;
+    }
+    main #third-content .introduce-card {
+        height: 100%;
+    }
+    main #third-content {
+        height: 100%;
+    }
+    footer #footer-info .down-info {
+        flex-wrap: wrap;
+    }
+    main .scroll .backtotop {
+        width: 490px;
+        left: 0px ;
+        bottom: 0px;
+        position: static;
+        margin-left: 15px;
+        margin-bottom: 80px;
+    }
+    main #bottom-text {
+        height: 90px;
+        padding-top: 40px;
+    }
+    main .scroll .backtotop {
+        width: 90%;
+    }
+    footer #footer-info .up-information .card-text {
+        width: 100%;
+    }
+    footer #footer-info .down-info .right-text {
+        flex-wrap: wrap;
+    }
+    [data-aos^=fade][data-aos^=fade] {
+        display: none;
+    }
+
+    
+}
+@media (max-width:385px) {
+    main #content .windows-search {
+        width: 340px;
+        height: 300px;
+    }
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            padding-top: 40px;
+        }
+        #container {
+            width: 800px;
+            height: 400px;
+            border-radius: 4px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            background-color: whitesmoke;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            padding-top: 40px;
+        }
+        #container .heigh-input {
+            display: flex;
+            padding: 10px 0px;
+        }
+        #container .heigh-input input{
+            margin: 0 5px;
+        }
+        #container .weight-input {
+            display: flex;
+            padding: 10px 0px;
+        }
+        #container .weight-input input{
+            margin: 0 5px;
+            margin-bottom: 10px;
+        }
+        #container .btn {
+            width: 250px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        #container .btn .input-btn {
+            font-size: 20px;
+            border: 1px solid black;
+            background-color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #container .btn .clear-btn {
+            font-size: 20px;
+            border: 1px solid black;
+            background-color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #text-box {
+            width: 800px;
+            height: 300px;
+            border-radius: 4px;
+            margin: 0 auto;
+            background-color: whitesmoke;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>BMI計算</h1>
+        <div class="heigh-input">
+            <label for="heigh">身高: </label>
+            <input id="heigh" type="number">
+            <div>cm</div>
+        </div>
+        <div class="weight-input">
+            <label for="weight">體重: </label>
+            <input id="weight" type="number">
+            <div>kg</div>
+        </div>
+        <div class="btn">
+            <div class="input-btn">輸入</div>
+            <div class="clear-btn">清除</div>
+        </div>   
+    </div>
+    <div id="text-box">
+        <div class="bmi" >BMI: <span></span></div>
+        <div class="body">身體質量指數: <span></span></div>
+        <div class="suggest">建議: <span></span></div>
+    </div>
+    <script>
+        const heigh = document.querySelector('#heigh');
+        const weight = document.querySelector('#weight');
+
+        const in_btn = document.querySelector('.input-btn');
+        const cl_btn = document.querySelector('.clear-btn');
+        
+        const bmi = document.querySelector('.bmi');
+        const body = document.querySelector('.body');
+        const suggest = document.querySelector('.suggest')
+        
+
+        in_btn.onclick = function () {
+            let h = heigh.value;
+            let w = weight.value;
+            let bmi_text = (w/((h/100)*(h/100))).toFixed(1);
+
+
+            if (bmi_text <18.5) {
+                bmi.innerHTML = bmi_text;
+                body.innerHTML = '過輕';
+                suggest.innerHTML = '多吃東西';
+            }
+
+            
+        };
+        
+        
+
+    </script>
+</body>
+</html>

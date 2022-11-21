@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            transition: 2s;
+        }
+        .box:focus {
+            background-color: orange;
+        }
+        #box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            
+            
+        }
+        #box:focus {
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">1</div>
+    <img id="cat" src="./img/cat.jfif" alt="">
+    <script>
+        // log 通常拿來找錯誤用的(bug)
+        console.log('要交作業');
+
+        // 知道是誰(元素)
+        // 知道是什麼時候 (當元素被點擊的時候)
+        // 要做什麼 (ex.變紅色)
+
+        // 宣告
+        // var let const
+        var count = 1;
+        console.log(count);
+
+        var box = document.querySelector('.box');
+        console.log(box);
+
+        // 點擊事件
+        box.onclick = function () {
+            // 指定box內的style屬性: 背景變色
+            box.style.backgroundColor = 'red';
+            box.style.width = '300px';
+        };
+        var img = document.querySelector('#cat')
+        console.log(img);
+
+        img.onclick = function () {
+            img.src = './img/cat1.jfif';
+        };    
+        
+        // 勞保局收 分機#1556 張先生收
+    </script>
+</body>
+</html>

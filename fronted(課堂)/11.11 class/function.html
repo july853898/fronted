@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: bisque;
+        }
+        .text {
+            border: 1px solid white;
+            color: white;
+
+        }
+        .btn {
+            border: 1px solid white;
+            color: white;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <!-- <div class="text">文字</div>
+        <div class="btn">按鈕</div> -->
+    </div>
+
+
+
+    <script>
+           
+           
+
+
+        // function 函式
+        const box = document.querySelector('.box');
+
+        // 匿名函示
+        // box.onclick = function () {
+        // console.log('h1');
+        // };
+
+        let output = function(){
+            console.log('output');
+        };
+
+        // 具名函示
+        function mylog(){
+            console.log('mylog');
+        }
+        mylog();
+        output();
+
+        function fire(title){
+            document.write(title);
+        }
+        fire('hey')
+
+        function add(a,b){
+            console.log(a + b);
+            return a+b;
+            // 以下都不會被執行
+        };
+        
+       
+
+        function work(幾點起床,天氣如何){
+            洗臉刷牙
+            if(幾點起床 > 9.30){
+                上班
+            }else{
+                吃早餐
+                看報紙
+                去上班
+            }
+        }
+
+        // 練習
+        // 具名函示
+
+        function bigBox(a,b){
+            box.textContent = a-b
+            // return a*b;
+        }
+        box.addEventListener('click',function(){
+            let last = bigBox(); 
+            console.log(last);
+            bigBox(5,6)
+            // box.textContent = bigBox(7,8)
+        });
+
+        
+
+        // box.textContent = bigBox(7,8)
+
+        // 匿名函示
+        let hitg = function(jig){
+
+            return jig + '你好';
+            
+        };
+        let gitg = function(jigg){
+
+                return jigg + 1;
+        };
+        
+        
+        
+
+    </script>
+</body>
+</html>

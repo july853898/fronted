@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .none {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="time">10s</div>
+    <button class="start">
+        開始計時
+    </button>
+    <button class="pause none">
+        停止計時
+    </button>
+    <script>
+        const timeBoard = document.querySelector('.time')
+        const startBtn = document.querySelector('.start')
+        const pauseBtn = document.querySelector('.pause')
+        let time = 50;
+        let timer;
+        startBtn.addEventListener('click',function(){
+            pauseBtn.classList.remove('none')
+            startBtn.classList.add('none')
+            let timer = setInterval(function(){
+                if (time > 0){
+                    time --;
+                }else {
+                    clearInterval(timer);
+                    // 遊戲結束 彈窗....
+                }
+                timeBoard.innerHTML = ` ${time}s`
+            },1000)
+        });
+        pauseBtn.addEventListener('click',function(){
+            startBtn.classList.remove('none')
+            pauseBtn.classList.add('none')
+            clearInterval(timer);
+        })
+    </script>
+</body>
+</html>

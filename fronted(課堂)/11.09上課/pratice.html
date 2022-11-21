@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box1"></div>
+    <img class="img" src="./img/cat.jfif" alt="">
+
+    <script>
+
+        let text = '你好'
+        console.log(text);
+            
+        const img = document.querySelector('.img')
+
+        console.log(img.src);
+        img.onclick = function () {
+            let text1 = '你們好'
+            console.log(text1);
+            if(img.src == 'http://127.0.0.1:5500/fronted(%E8%AA%B2%E5%A0%82)/11.09%E4%B8%8A%E8%AA%B2/img/cat.jfif') {
+            img.src = 'img/cat1.jfif'
+        }else if(img.src == 'http://127.0.0.1:5500/fronted(%E8%AA%B2%E5%A0%82)/11.09%E4%B8%8A%E8%AA%B2/img/cat1.jfif'){
+            img.src = 'img/cat.2.jpg'
+        }else {
+            img.src = 'img/cat.jfif'
+        }
+        }
+
+
+        
+    </script>
+</body>
+</html>

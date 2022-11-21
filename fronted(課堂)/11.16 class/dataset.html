@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 藏資料 data-* -->
+    <div class="test" data-mike="0954234584">123456</div>
+
+    <button data-area="北部">北部</button>
+    <button data-area="中部">中部</button>
+    <button data-area="南部">南部</button>
+    <button data-area="東部">東部</button>
+
+    <script>
+        const test = document.querySelector('.test')
+
+        // 你藏了資料之後 你可用 .dataset 去找到你藏的資料
+        console.log(test.dataset.mike);
+
+        const btns = document.querySelectorAll('button')
+        btns.forEach(function(btn){
+            btn.addEventListener('click',function(){
+                console.log(btn.dataset.area);
+                if(btn.dataset.area == '北部'){
+                    console.log('card');
+
+                }
+
+
+
+            })
+
+
+        })
+
+    </script>
+</body>
+</html>

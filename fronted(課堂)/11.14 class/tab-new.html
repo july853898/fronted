@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+        }
+        .board {
+            width: 600px;
+            height: 500px;
+            background-color: wheat;
+            margin: auto;
+        }
+        .tabs {
+            border:  1ps solid #000;
+            display: flex;
+        }
+
+        .tab {
+            border: 1px solid #000;
+            padding: 3px 4px;
+        }
+        .none {
+            display: none;
+        }
+        .active {
+            background-color: skyblue;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="board">
+            <div class="tabs">
+                <div class="tab tab1">書籤一</div>
+                <div class="tab tab2">書籤二</div>
+                <div class="tab tab3">書籤三</div>
+            </div>
+            <div class="contents">
+                <div class="content">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // const tab1 = document.querySelector('.tab1');
+        // const tab2 = document.querySelector('.tab2');
+        // const tab3 = document.querySelector('.tab3');
+
+        // querySelectorAll 抓取文件中擁有tab class的元素
+        const tabs = document.querySelectorAll ('.tab')
+        const content = document.querySelector('.content');
+
+
+        // for 迴圈 裡面又有寫一個for迴圈的時候
+        // 裡面的for迴圈會先跑一次
+        // 雙重迴圈
+
+        for(let i = 0; i < tabs.length; i++){
+            tabs[i].addEventListener('click',function(){
+
+                
+                for(let j = 0; j < tabs.length; j++){
+                    tabs[j].classList.remove('active');
+                };
+                tabs[i].classList.add('active');
+
+
+                if(i==0){
+                    content.textContent = '這是內容1';
+                }else if(i==1){
+                    content.textContent = '這是內容2';
+                }else {
+                    content.textContent = '這是內容3';
+                }
+            })
+        }
+        
+
+        
+    </script>
+</body>
+</html>
