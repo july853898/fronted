@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">123</div>
+
+    <script>
+        const box = document.querySelector('.box');
+        var test = 1;
+
+        let obj1 = {
+            name: 'mike',
+            fn: function(){
+                console.log(this);
+            }
+        };
+        // obj1 呼叫的fn 此時的this指的是obj1
+        // obj1.fn();
+
+        function hello(){
+            console.log(this);
+        }
+
+        // window(可省) 呼叫的 此時的this指的是window
+        // window.hello();
+
+        box.addEventListener('click',function(){
+            console.log(this);
+        });
+    </script>
+</body>
+</html>
