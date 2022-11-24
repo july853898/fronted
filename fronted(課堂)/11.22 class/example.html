@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body>
+	<!-- 
+		注意; 每一個vue例項都是一個元件 每一個元件也都是一個vue例項
+
+
+		父子元件之間帶的通訊：
+			父元件傳遞資料給子元件： 通過屬性繫結，並且子元件需要使用props接收
+			子元件給父元件傳遞資料： 必須基於釋出訂閱模式，子元件需要先向外發布，父元件負責監聽
+	 -->
+	<div id="app">
+		<div>
+			<input type="text" v-model="inputValue">
+			<button @click="handleSubmit">提交</button>
+		</div>
+		<ul>
+			<!--
+				 使用全域性元件 
+				父元件給子元件傳遞引數的過程：
+					1、在父元件的子元件上使用屬性繫結 繫結需要傳遞的引數
+					2、在子元件中使用props接受父元件的引數
+
+			-->
+			<todo-item 
+				v-for='(item,index) of list' 
+				:key="index"
+				:item="item"
+				:index="index"
+				@delete="deleteItem">  
+				
+			</todo-item>
+		</ul>
+
+	</div>
+	<script type="text/javascript">
+		
+		//全域性元件註冊
+		Vue.component('todo-item',{
+			//子元件要先接受父元件的引數
+			props:['item','index'],
+			template:"<li @click='handleClick'>{{item}}</li>",
+			// 注意; 在元件中 data必須是一個function
+			data:function(){
+				return {
+
+				}
+			},
+			methods:{
+				handleClick:function(){
+					//子元件需要將點選的li對應的index傳遞給父元件    子元件傳參個父元件  使用釋出訂閱模式
+					this.$emit('delete',this.index);
+				}
+			}
+		})
+
+
+		//註冊一個區域性元件
+		// var todoItem = {
+		// 	template:'<li>item</l1>'
+		// }
+
+		
+		var app = new Vue({
+			el:'#app',
+			data:{
+				inputValue:'',
+				list:[]
+			},
+			// components:{
+			// 	'todo-item':todoItem
+			// },
+			methods:{
+				handleSubmit:function(){
+					//將文字框的內容新增到list中
+					this.list.push( this.inputValue );
+					this.inputValue = '';
+				},
+				deleteItem:function(index){
+					
+					this.list.splice(index,1);
+				}
+			}
+		})
+	</script>
+</body>
+</html>

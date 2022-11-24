@@ -64,7 +64,7 @@
 }
 .ocean > .row .right.col .row .boxes {
   padding-top: 10px;
-  width: 380px;
+  width: 500px;
   gap: 20px;
 }
 .ocean > .row .right.col .row .boxes .sign:hover {
@@ -81,7 +81,21 @@
     width: 100%;
     background-color: transparent !important;
   }
+  .ocean .right.col .row.pic {
+    display: block !important;
+  }
   .ocean .right.col .row .text img {
     height: 64px;
+  }
+}
+@media (max-width: 640px) {
+  .ocean .right.col {
+    padding: 0px !important;
+  }
+  .ocean .right.col .boxes {
+    width: 100% !important;
+  }
+  .ocean .right.col .boxes .sign {
+    width: 90% !important;
   }
 }/*# sourceMappingURL=teach.css.map */

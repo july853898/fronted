@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card {
+            border: 1px solid #000;
+        }
+        .wheat {
+            background-color: wheat;
+        }
+        .skyblue {
+            background-color: skyblue;
+        }
+        img {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- vue 迴圈: v-for  <<切記: 要綁key>>   vue綁定: v-bind:(全名),":"(簡寫) -->
+        <div v-for="(item,index) in data" :key="index" class="card" v-bind:class="{ 'wheat': item.gender == 'male', 'skyblue': item.gender == 'female' }">
+            <div class="name">姓名:{{ item.name }}</div>
+            <div class="age">年齡:{{ item.age }}</div>
+            <div class="gender">性別:{{ genderChange(item.gender) }}</div>
+            <div class="power">戰力:{{ item.power }}</div>
+            <!-- input 裡面會有數值 可以跟vue的變數連結在一起 v-model -->
+            <input v-model="item.power" type="number">
+            <button @click="addPower(item)">增加戰力</button>
+            <!-- vue 判斷 v-if v-else-if v-else -->
+            <img v-if="item.power >= 1000" :src="image.strong" :alt="`${item.name}的戰力示意圖`">
+            <img v-else-if="item.power >= 100" :src="image.weak" :alt="`${item.name}的戰力示意圖`">
+            <img v-else :src="image.bread" :alt="`${item.name}的戰力示意圖`">
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        // const { createApp } = Vue
+        Vue.createApp({
+            // 存放變數的位置
+            // data: function() 
+            data() {
+                return {
+                    data: [
+                        {
+                            name: 'mike',
+                            age: 48,
+                            gender: 'male',
+                            power: 5000,
+                        },{
+                            name: 'mary',
+                            age: 16,
+                            gender: 'female',
+                            power: 1000,
+                        },{
+                            name: 'tina',
+                            age: 30,
+                            gender: 'female',
+                            power: 500,
+                        },{
+                            name: 'david',
+                            age: 18,
+                            gender: 'male',
+                            power: 50,
+                        },{
+                            name: 'ren',
+                            age: 16,
+                            gender: 'male',
+                            power: 16000,
+                        }
+                    ],
+                    image: {
+                        weak: './img/0a75ecf3176a955b4f6b61da2638a344.jpg',
+                        strong: './img/14447.png',
+                        bread: './img/5f1GG0th.webp'
+                    },
+ 
+                };
+            },
+            // 監視data內的變數變化
+            watch:{
+                // data() 內的 data
+                data: {
+                    // 發生變化的時候要做甚麼事
+                    handler: function(){
+                        // 要做得事
+                        this.data.sort((a,b)=>{
+                            return b.power - a.power;
+                        })
+                    },
+                    // 有所變化才會觸發
+                    immediate: true,
+                    // 可以監視到物件內更深層的值
+                    deep: true,
+                },
+            },
+            // 存放function
+            methods: {
+                genderChange(gender){
+                    if(gender == 'male'){
+                        return '男性';
+                    }else if(gender == 'female'){
+                        return '女性';
+                    }else{
+                        return '中性';
+                    }
+                },
+                addPower(item){
+                    console.log(item);
+                    // true false
+                    // !true == false
+                    // !false == true
+                    if(!item.power){
+                        item.power = 100;
+                    }else{
+                        item.power += 100;
+                    }
+                }   
+            },
+            // 畫面載入前先做的事情
+            mounted() {
+            },
+        }).mount('#app');
+    </script>
+</body>
+</html>

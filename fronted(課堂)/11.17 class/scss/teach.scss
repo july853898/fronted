@@ -72,7 +72,7 @@
                 // input、sign  
                 .boxes {
                     padding-top: 10px;
-                    width: 380px;
+                    width: 500px;
                     gap: 20px;
                     .sign{
                         &:hover{
@@ -89,13 +89,18 @@
         }   
         
     }
+   
     @media (max-width: 1025px) {
         .left.col{
             display: none !important;
+           
         }
         .right.col{
             width: 100%;
             background-color: transparent !important;
+            .row.pic{
+                display: block !important;
+            }
             .row {
                 .text {
                     img {
@@ -104,5 +109,18 @@
                 }
             }
         }   
+    }
+    @media (max-width: 640px){
+        .right.col {
+            padding: 0px !important;
+            .boxes {
+                width: 100% !important;
+                .sign{
+                    width: 90% !important;
+                }
+            }
+            
+        }
+        
     }
 }  

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card {
+            border: 1px solid #000;
+        }
+        .wheat {
+            background-color: wheat;
+        }
+        .skyblue {
+            background-color: skyblue;
+        }
+        img {
+            width: 100px;
+        }
+        .gray{
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div id="add"> 
+        <!-- {{ add }} -->
+        <div class="add card gray">
+            <div class="name">
+                                        <!-- 留著花括號是為了讓我知道資料裡面在打什麼 -->
+                <label for="add-name">姓名:{{ add.name }}</label>
+                <input v-model="add.name" id="add-name" type="text">
+            </div>
+            <div class="age">
+                <label for="add-age">年齡:{{ add.age }}</label>
+                <input v-model="add.age" id="add-age" type="number">
+            </div>
+            <div class="gender">
+                <label for="add-gender">性別:{{ add.gender }}</label>
+                <!-- select 下拉式選單 -->
+                <select v-model="add.gender" id="add-gender">
+                    <option value="male">男性</option>
+                    <option value="female">女性</option>
+                </select>
+            </div>
+            <div class="power">
+                <label for="add-power">戰力:{{ add.power }}</label>
+                <input v-model="add.power" id="add-power" type="number">
+            </div>
+            <div class="first" v-show="">請完整填寫</div>
+            <button @click="addCard()">新增資料</button>
+        </div>
+
+        <!-- Vue迴圈 v-for   vue綁定: v-bind:(全名),":"簡寫  !! 切記: 要綁key    -->
+        <!-- class="{ 'wheat': item.gender === 'male', 'skyblue': item.gender === 'female' }"  判斷性別做顏色區分
+             class=" { 'class.name': 判斷式 } "    -->
+        <div v-for="(item,index) in data" :key= "item.id" class="card" v-bind:class="{ 'wheat': item.gender === 'male', 'skyblue': item.gender === 'female' }">
+            <div class="rank">第 {{ index+1 }}名</div>
+            <div class="id">ID: {{ item.id }}</div>
+            <div class="name">姓名:{{ item.name }}</div>
+            <div class="age">年齡:{{ item.age }}</div>
+            <div class="gender">性別:{{ genderChange(item.gender) }}</div>
+            <div class="power">戰力:{{ item.power }} </div>
+
+            <!-- input 裡面會有數值可以跟vue的變數連接再一起 v-model -->
+            <!-- <input v-model="item.power" type="number"> -->
+            <!-- <button @click="addPower(item)">增加戰力</button> -->
+
+            <!-- 點擊按鈕會參照function(addPower(item)) -->
+            
+
+
+            <!-- vue 判斷  v-if -->  
+            <img v-if="item.power >= 6000" :src="image.dog" alt="">
+            <img v-else-if=" item.power >= 1000" :src="image.power" alt="">
+            <img v-else :src="image.good" alt="">
+            <br>
+            <!-- 刪除資料                      index是data裡面的數值-->
+            
+            <div>                           
+                <button type="button" @click="deleteItm(index)"> 刪除資料</button>
+                <button type="button" @click="editItm(item)">編輯資料</button>
+            </div>
+            <div >
+                <button type="button">取消</button>
+                <button type="button">確定儲存</button>
+            </div>
+
+        </div>
+        <!-- 點擊事件 -->
+        <!-- <button @click="change()">增加戰力</button>
+        <img v-if="pic==0" :src="image.dog" alt="">
+        <img v-else-if="pic==1" :src="image.power" alt="">
+        <img v-else :src="image.good" alt=""> -->
+
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        // 可以這樣寫
+        // const { createApp } = Vue
+            Vue.createApp({
+                // 存放變數的位置
+                data() {
+                    return {
+
+                        // 也可以這樣打
+                        add: {},
+                        // 正常來說這樣打
+                        // add:{
+                        //         name: '',
+                        //         age: '',
+                        //         gender: '',
+                        //         power: '',
+                        // },
+                        pic: 0,
+                        // data() 內的 data(變數)
+                        data: [
+                            {
+                                id: 1,
+                                name: 'mike',
+                                age: 48,
+                                gender: 'male',
+                                power: 5000,
+                            },{
+                                id: 2,
+                                name: 'mary',
+                                age: 16,
+                                gender: 'female',
+                                power: 10000,
+                            },{
+                                id: 3,
+                                name: 'tina',
+                                age: 30,
+                                gender: 'female',
+                                power: 40,
+                            },
+                            {
+                                id: 4,
+                                name: 'david',
+                                age: 48,
+                                gender: 'male',
+                                power: 5000,
+                            },
+                            {
+                                id: 5,
+                                name: 'ren',
+                                age: 48,
+                                gender: 'male',
+                                power: 5000,
+                            }
+                        ],
+                        image:{
+                            power: './img/dolae.jfif',
+                            dog: './img/FM12Yd3XEAIqM8S.jpg',
+                            good: './img/smile-simple-background_23-2148051319.webp',
+                        },
+                    }
+                },
+                // 存放function
+                methods: {
+                    genderChange(gender){
+                        if(gender === 'male'){
+                            return '男性';
+                        }else {
+                            return '女性';
+                        }
+                    },
+                    // 增加按鈕
+                    change(){
+                        // 0 1 2
+                        if (this.pic < 2){
+                            this.pic ++
+                        }else{
+                            this.pic = 0;
+                        }
+                    },
+                    // 增加戰力
+                    // addPower(item){
+                    //     console.log(item);
+                    //     // true false
+                    //     // !true == fale
+                    //     // !fale == true
+                        
+                    //     if(!item.power){
+                    //         item.power = 100;
+                    //     }else {
+                    //         item.power += 100;
+                    //     }
+                        
+                    // },
+        
+                    addCard(){
+                        // 用this 去找資料 add 
+                        console.log(this.add.name);
+                        console.log(this.add.power, 'ddd');
+                            this.data.push(this.add);
+                            this.add = {};  
+                    },
+
+                    // 刪除
+                    deleteItm(num){
+                        alert('資料刪除囉')
+                        // splice會刪除陣列
+                        this.data.splice(num,1)
+                    },
+                    editItm(item){
+                        this.data.item = false;
+                    },
+                },
+                
+                // 監視data內的變數變化
+                watch:{
+                    // data() 內的 data(參數)
+                    // 
+                    data:{
+                        // 發生變化的時候要做什麼事
+                        // handler 固定的
+                        handler: function(){
+                            // 要做的事情
+                            this.data.sort(function(a,b){
+                                return b.power - a.power
+                            })
+                        },
+                        // 有所變化才會觸發
+                        immediate: true,
+                        // 可以監視到物件內更深層的值
+                        deep: true,
+                    }
+                },
+
+                // 畫面載入前先做的事情
+                mounted(){
+                    
+                },
+            }).mount('#add')
+            // createApp({
+            //     data() {
+            //         return {
+            //             // 物件要用逗號隔開
+            //             text: 121,
+            //         }
+            //     }
+            // }).mount('#container')
+        
+    </script>
+
+</body>
+</html>

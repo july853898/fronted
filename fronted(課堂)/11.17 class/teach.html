@@ -15,29 +15,31 @@
         <!-- 第一個row -->
         <div class="row m-0 p-0">
             <!-- 左邊區域-->
-            <div class="left col p-0 col-6  text-light d-flex flex-wrap justify-content-center">
+            <div class="left col p-0 col-6  text-light d-flex flex-wrap flex-column align-content-center justify-content-between">
+                <div></div>
                 <!-- 左邊文字 -->
                 <div class="row word d-flex flex-column
                 align-content-center justify-content-center">
                     <div class="col col-12">
-                        <h2 style="font-weight: bold;">Keep it special</h2> 
+                        <div class="fs-1" style="font-weight: bold;
+                        font-size: 50px !important;">Keep it special</div> 
                     </div>
-                    <div class="col col-12">
-                       <h6>
+                    <div class="col col-12 fs-2">
+                       <div class="" style="font-size: 30px !important;">
                             Capture your personal memory in unique way, anywhere.
-                       </h6> 
+                       </div> 
                     </div>
                 </div>
                 <!-- 左邊圖示 -->
-                <div class="row pic d-flex 
-                align-content-end justify-content-center ">
-                    <div class="col" >
+                <div class="row pic d-flex offset-3
+                 ">
+                    <div class="col col-1" >
                         <img src="./img/titwer.svg" alt="">
                     </div>
-                    <div class="col">
+                    <div class="col col-1">
                         <img src="./img/fb.svg" alt="">
                     </div>
-                    <div class="col">
+                    <div class="col col-1">
                         <img src="./img/ig.svg" alt="">
                     </div>
                 </div>
@@ -45,7 +47,7 @@
             <!-- 右邊區域 -->
             <div class="right col"style="background-color: #162446;">
             
-            <div class="row">
+            <div class="row w-100">
                 <!-- 數位方塊 -->
                 <div class="col col-12 text">
                     <img src="./img/cube.svg" alt="">
@@ -62,7 +64,7 @@
                 </div>
 
                 <!-- input、sign -->
-                <div class="row boxes">
+                <div class="row boxes w-75">
                 <!-- input輸入 -->
                 <div class="input-group flex-nowrap">
                     <input type="text" class="form-control bg-dark border-dark text-white" placeholder="Email" aria-label="Username" aria-describedby="addon-wrapping">
@@ -74,7 +76,21 @@
                 <a class="forget d-flex justify-content-end text-decoration-none   text-secondary"
                  href="">Forgot your password?</a>
                  <!-- 登入按鈕 -->
-                <button class="sign bg-primary opacity-75 text-light rounded-pill" style="height: 40px; width: 280px;">SIGN IN</button>
+                <button class="sign bg-primary opacity-75 text-light rounded-pill w-75" style="height: 40px; width: 280px;">
+                <a class="text-white text-decoration-none" href="./home.html">SIGN IN</a>
+                </button>
+
+                <div class="row pic d-none w-50
+                h-25 d-flex flex-column">
+                    
+                    <div class="col-12 d-flex justify-content-center pt-5" style="gap: 15px;">
+                        <img src="./img/titwer.svg" alt="">
+                        <img src="./img/fb.svg" alt="">
+                        <img src="./img/ig.svg" alt="">
+                    </div>
+                    
+                </div>
+
             </div>
        
             </div>
